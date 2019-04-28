@@ -1,0 +1,315 @@
+%style_link{
+	color: #333;
+	text-transform: capitalize;
+	color: #666;
+	&:hover{
+		color: $brand-primary;
+	}	
+}
+
+h3.title-secondary{
+	font-weight: 800;
+	font-size: 25px;
+	color: #1b1b1b;
+	margin-bottom:50px;
+}
+.widget{
+	color: #666;
+	margin-bottom: 30px;
+	&.bottom-home1{
+		padding: 0px;
+	}
+	.widget-title{
+		font-size: 24px;
+		color: #333;
+		text-transform: uppercase;
+		font-style: normal;
+		padding-bottom: 20px;
+		margin-bottom: 30px;
+		border-bottom: 1px solid $gray-lighter;
+	}
+	ul.product-categories{
+		margin-bottom: 30px;
+		li{
+			border-bottom: 1px solid $gray-lighter;
+			line-height: 30px;
+			display: block;
+			position: relative;
+			margin-bottom: 15px;
+			i{
+				position: absolute;
+				right: 0;
+				top: 0;
+				padding: 9px;
+				cursor: pointer;
+				height: 20px;
+				width: 20px;
+				background:url(../images/Dana-icon-click.png)no-repeat scroll center top 5px;
+				&.active{
+					background-position:center bottom 8px;
+				}
+			}
+			a{
+				text-transform: uppercase;
+				color: #333;
+				font-family: "Montserrat";
+				font-weight: 700;
+				font-size: 13px;
+				font-style: normal;
+			}
+		}
+		ul{
+			display: none;
+			margin: 0px;
+			border-top: 1px solid $gray-lighter;
+			padding: 6px 0px;
+			li{
+				border-bottom: none;
+				margin-bottom: 0px;				
+				a{
+					@extend %style_link;
+					transition: all 0.3s ease-out 0s;
+					&:hover{
+						margin-left: 15px;
+					}
+				}
+				i{
+					display: none;
+				}
+			}
+		}
+	}
+	&.sidebar-newsletter{
+		background: $brand-home3;
+		padding: 20px;
+		h3{	
+			color: #fff;
+			font-size: 20px;
+			text-transform: uppercase;
+			padding-bottom: 20px;
+			border-bottom: 1px solid #aedaee;
+			margin-bottom:20px; 
+			margin-top:10px; 
+		}
+		p{
+			color: #fff;
+			font-size: 13px;
+			line-height: 15px;
+			margin-bottom:20px; 
+		}
+		form{
+			position: relative;
+			input{
+				background: #fff;
+				border:none;
+				font-size: 12px;
+				height: 35px;
+				width: 100%;
+				padding: 0px 35px 0 20px;
+			}
+			button{
+				position: absolute;
+				top: 0px;
+				right: 0px;
+				@include size(35px,35px);
+				background: #fff;
+				border:#fff;
+				i{
+					font-size: 18px;
+					color: $gray-light;
+				}
+			}
+		}
+	}
+	h4{
+		padding-bottom: 10px;
+		margin-bottom: 5px;
+		text-transform: capitalize;
+		font-size: 16px;
+		color: #333;
+		font-weight: 700;
+	}
+	.menu{
+		display: none;
+		input[type="checkbox"] {
+		    display:none;
+		}
+		label{
+			width: 100%;
+			cursor: pointer;
+			text-transform: uppercase;
+			font-weight: 600;
+			color: #1a1a1a;
+			margin: 5px 0px;
+		}
+		span.count{
+			float: right;
+			color: #1a1a1a;
+			font-weight: 600;
+		}
+		input[type="checkbox"] + label span.icon {
+		    display:inline-block;
+		    width:15px;
+		    height:15px;
+		    margin:-1px 4px 0 0;
+		    vertical-align:middle;
+		    cursor:pointer;
+		    background:url(../images/Dana-icon-check-box.png)no-repeat scroll 0 2px;
+		    @include transition(all 0.4s ease 0s);
+		}
+		input[type="checkbox"]:checked + label span.icon {
+		    background-position:left bottom 1px;
+		}
+	}
+	select{
+		width: 100%;
+		@include appearance();
+		border-radius:25px;
+		border:1px solid #d2d2d2;
+		height: 34px;
+		line-height: 34px;
+		font-size: 12px;
+		color: #8c8c8c;
+		padding:0px 30px 0px 20px;
+		outline: none;
+	}
+	.discount-down{
+		position: relative;
+		button{
+			background:none;
+			display: inline-block;
+			width:100%;
+			border-radius:20px;
+			box-shadow:none;
+			border:1px solid #d2d2d2;
+			height: 35px;
+			text-align: left;
+			font:400 12px/33px "Open Sans";
+			margin-bottom:10px;
+			padding-left:15px; 
+			color: #8c8c8c;
+			position:relative;
+			&:after{
+				position:absolute;
+				content: "";
+				font-family: "Material-Design-Iconic-Font";
+				font-size: 22px;
+				top:0px;
+				right: 15px;
+				color: #272626;
+
+			}
+		}
+		.discount-list{
+			display: none;
+			width:100%;
+			padding:15px 20px;
+			border:1px solid #d2d2d2;
+			border-radius:5px;
+			li{
+				display: inline-block;
+				width:100%;
+				line-height: 30px;
+				cursor: pointer;
+				font-size:12px;
+				color: #8c8c8c;
+			}
+		}
+	}
+}
+.ship-adress{
+	font:700 14px/20px "Open Sans";
+	color:#000;
+	padding-left:20px;
+	float:right;
+	cursor:pointer;
+	background:url("../images/Dana-icon-check-box.png") no-repeat scroll 0 5px;
+	transition:all 0.3s ease 0s;
+	&.active{
+		background-position:left bottom 3px;
+	}
+}
+.color{
+	li{
+		display: inline-block;
+		a{
+			height: 20px;
+			width: 20px;
+			background:#fff;
+			border:1px solid #000;
+			border-radius:50%;
+			display: inline-block;	
+			margin: 5px 20px 5px 0px;
+			&.gray{
+				background:#545454;
+				border-color:#545454;
+			}	
+			&.blue{
+				background:#006cf2;
+				border-color:#006cf2;
+			}	
+			&.brown{
+				background:#55342b;
+				border-color:#55342b;
+			}	
+			&.green{
+				background:#2c922f;
+				border-color:#2c922f;
+			}	
+			&.yellow{
+				background:#ffb400;
+				border-color:#ffb400;
+			}	
+			&.green{
+				background:#2c922f;
+				border-color:#2c922f;
+			}	
+			&.blue-light{
+				background:#00b6dd;
+				border-color:#00b6dd;
+			}	
+			&.purple{
+				background:#790d94;
+				border-color:#790d94;
+			}	
+			&.orange{
+				background:#fe7704;
+				border-color:#fe7704;
+			}	
+			&.red{
+				background:#f3241a;
+				border-color:#f3241a;
+			}
+		}
+	}
+}
+.widget{
+	&.hassub{
+		h4{
+			background:url(../images/Dana-icon-click.png)no-repeat scroll right top 5px;
+			cursor: pointer;
+			&.active{
+				background-position:right bottom 15px; 
+			}
+		}
+	}
+}
+.my-account{
+	margin-bottom: 50px;
+	.widget ul li{
+		margin-bottom: 20px;
+	}
+	.breadcrumb{
+		margin-bottom: 80px;
+	}
+	.contact-form{
+		.link-button{
+			float: right;
+		}
+	}
+}
+.widget{
+	.menu.block{
+		display:inline-block;
+	}
+}

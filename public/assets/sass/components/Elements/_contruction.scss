@@ -1,0 +1,112 @@
+.contruction{
+	display:inline-block;
+	width:100%;
+	padding:0px;
+	background:#212121;
+	float: left;
+	margin-bottom:-5px;
+	.col-md-9,.col-md-3{
+		padding:0px;
+	}
+	.col-md-3{
+		background: #212121;
+		text-align: center;
+		margin-top:20%; 
+	}
+	.col-md-9{
+		position: relative;
+		img{
+			width: 100%;
+		}
+		.text{
+			position:absolute;
+			left: 0px;
+			width: 100%;
+			top: 40%;
+			h3{
+				font:700 60px/80px "Open Sans";
+				color: #fff;
+				letter-spacing: 15px;
+				text-transform: uppercase;
+				text-align: center;
+				padding:0px 50px;
+			}
+		}
+	}
+	.logo{
+		margin-bottom: 30px;
+	}
+	.time{
+		padding:0 40px;
+		.countdown-times{
+			background:#141414;
+			width: 100%;
+			display: inline-block;
+			padding:20px 0px;
+			.distance{
+				display: inline-block;
+				color: #fff;
+				padding:0px 18px;
+				position:relative;
+				&:after{
+					position:absolute;
+					content:"";
+					height: 50px;
+					width: 1px;
+					background:#5f5f5f;
+					top:15px;
+					right:0px;
+				}
+				&:last-child{
+					&:after{
+						width: 0px;
+					}
+				}
+				.number{
+					margin-bottom: 5px;
+					b{
+						font:400 52.6px/50px "Open Sans";
+
+					}
+				}
+				.text{
+					font:700 16px/20px "Open Sans";
+					text-transform: capitalize;
+				}
+			}
+		}
+	}
+	.social{
+		a{
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			background:#fff;
+			i{
+				color:#333;
+				line-height: 30px;
+			}
+			&:hover{
+				background:$brand-primary;
+				i{
+					color: #fff;
+				}
+			}
+		}
+	}
+	.newsletter{
+		&.newsletter-v2{
+			background: none;
+			padding-left:40px;
+			padding-right:40px;
+			form{
+				margin:0px;
+				width: 100%;
+				input{
+					width: 100%;
+				}
+			}
+		}
+	}
+}

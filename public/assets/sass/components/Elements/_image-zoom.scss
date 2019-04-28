@@ -1,0 +1,43 @@
+.product-img-box{
+	#image-view{
+		display: inline-block;
+	}
+	.thumb-content{
+		margin-top: 20px;
+		width: 100%;
+		text-align: center;
+		li{
+			display: inline-block;
+			width: 70px;
+			padding-right:10px;
+			margin-bottom: 20px;
+			margin-right:20px; 
+			img{
+				opacity: 0.6;
+			}
+			&:last-child{
+				margin-right:0px; 
+			}
+			a{
+				display: inline-block;
+			}
+			&.active{
+				img{
+					opacity: 1;
+				}
+			}
+		}
+	}
+	img{
+		width:100%;
+	}
+	margin-bottom: 50px;
+	text-align: center;
+}
+.product-details-content{
+	.col-md-6{
+		&:first-child{
+			padding-left: 0px;
+		}
+	}
+}

@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Panier index{% endblock %}
+
+{% block body %}
+    <h1>Panier index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>article</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for panier in paniers %}
+            <tr>
+
+                <td>{{ panier.id }}</td>
+
+                {% for panier in panier.Article %}
+                 <td>{{ panier.nom }}</td>
+                 {% endfor %}
+                 <td>
+                 {{ include('panier/_delete_form.html.twig') }}
+             </td>
+
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="2">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

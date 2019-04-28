@@ -1,0 +1,110 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Article index{% endblock %}
+
+{% block body %}
+
+<head>
+        <link rel="stylesheet" type="text/css" href="../../../assets/css/bootstrap.css"/>
+        <link rel="stylesheet" type="text/css" href="../../../dash.css"/>
+        <link rel="stylesheet" type="text/css" href="../../../assets/vendor/range-price.css"/>
+        <link rel="stylesheet" type="text/css" href="../../../assets/vendor/owl-slider.css"/>
+
+    </head>
+
+
+<nav class="navbar navbar-dark sticky-top flex-md-nowrap p-0">
+<a href="#" title="Dana-Logo"><img src="../../../assets/images/Dana-menu-logo.png" alt="Dana-Logo"></a>
+
+
+                    <div class="nom">
+                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                        <h3 style="  color: white;">administrateur <strong>{{ app.user.username }}</strong> <a href={{ logout_url(key = null) }}>logout</a></h3>
+                    {% endif %}
+                    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-md-2 d-none d-md-block sidebar">
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link " href="{{ path('dashboard') }}">
+                  <i class="zmdi zmdi-widgets"></i>
+                  Articles <span class="sr-only">(current)</span>
+                </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ path('categorie_index') }}">
+                  <i class="zmdi zmdi-file-text"></i>
+                  categories
+                </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('commande_index') }}">
+                  <i class="zmdi zmdi-shopping-cart"></i>
+                  commandes
+                </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                  <i class="zmdi zmdi-accounts"></i>
+                  profile
+                </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 my-3">
+            
+            <div class="projects mb-4">
+                <div class="projects-inner">
+                    <header class="projects-header">
+                        <div class="title"></div>
+                        <div class="count">Articles</div>
+                        <i class="zmdi zmdi-download"></i>
+                        <a href="{{ path('categorie_new') }}">creer une nouveau Categorie</a>
+                    </header>
+                    <table class="projects-table">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Nom</th>
+                                <th>actions</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            {% for categorie in categories %}
+                            <td>{{ categorie.id }}</td>
+                            <td>{{ categorie.nom }}</td>
+                            <td>
+                               
+                                    <button  type="button" class="btn btn-primary"><a style="color: white" href="{{ path('categorie_show', {'id': categorie.id}) }}">details</a></button>
+                                    <button type="button" class="btn btn-info"><a href="{{ path('categorie_edit', {'id': categorie.id}) }}" style="color: white">edit</a></button>
+                                    {{ include('categorie/_delete_form.html.twig') }}
+                                    
+                                    
+                                
+                            </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+                        
+                </div>
+           
+        </main>
+
+  
+    </div>
+    <script type="text/javascript" src="../../../assets/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../../../assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../dash.ts"></script>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,158 @@
+.listing-ver3{
+	.container{
+		.products.grid_full.grid_sidebar{
+		.item-inner{
+			width: 20%;
+			&:nth-child(3n){
+				border-right:1px solid #eee;
+			}
+			&:nth-child(5n){
+				border-right:none;
+			}
+		}
+		}
+	}
+}
+.listing-ver4{
+	.container{
+		.products.grid_full.grid_sidebar{
+		.item-inner{
+			width: 25%;
+			&:nth-child(3n){
+				border-right:1px solid #eee;
+			}
+			&:nth-child(4n){
+				border-right:none;
+			}
+		}
+		}
+	}
+}
+.popular-product{
+	.products{
+		.product{
+			&:first-child,&:last-child{
+				.product-images{
+					.slide-product-images{
+						width: 270px;
+					}
+				}
+			}
+		}
+	}
+}
+.best-sellers{
+	.products{
+		.product{
+			&:first-child{
+				.slide-product-images{
+					width: 545px;
+				}
+			}
+		}
+	}
+}
+.featured-product{
+	padding-top:110px;
+	padding-bottom:100px;
+	.container{
+		background-position: right 15px top 0px;
+	}
+	.wrap-time{
+		bottom:50px;
+		left: 110px;
+	}
+}
+.popular-product{
+	padding-top:100px;
+	padding-bottom:100px;
+	.title-text{
+		margin-bottom:60px; 
+	}
+}
+.banner-home1-bottom{
+	padding:30px 0px 50px;
+	.images{
+		padding-left:50px;
+		max-width: 545px;
+	}
+	.text{
+		top:30%;
+	}
+}
+.best-sellers{
+	padding-top:100px;
+	.title-text h3{
+		margin-bottom:35px; 
+	}
+	.products{
+		.product{
+			&:nth-child(2),&:nth-child(3),&:nth-child(4),&:nth-child(5){
+				.action{
+					position: absolute;
+					left: 0px;
+					bottom:10px;
+				}
+			}
+		}
+	}
+}
+.hot-deals{
+	padding:100px 0px;
+	max-height:595px;
+	.slide-product-images{
+		width:340px;
+		margin-left:25px; 
+		margin-top:25px; 
+		.owl-controls{
+			.owl-dot {
+				margin-right:0px; 
+			}
+		}
+	}
+	.btn-vertical-slider{
+		&.prev{
+			bottom:-95px !important;
+		}
+	}
+}
+.best-sellers{
+	padding-top:135px;
+	
+	.title-text{
+		margin-bottom:20px; 
+	}
+	.tab-container{
+		.owl-stage-outer{
+			padding:0px;
+		}
+	}
+	&.proposes{
+		.products{
+			max-width: 966px;
+		}
+		.container{
+			padding-bottom:150px;
+		}
+	}
+}
+.best-sellers.proposes .products .product:first-child .wrap-title{
+	margin-top:60px;
+	width:60%;
+}
+.best-sellers.proposes .products .product:first-child .action{
+	width:40%;
+}
+.best-sellers.proposes .products .product{
+	padding-right:0px;
+}
+.banner-home3{
+	margin-bottom:0px;
+	padding-bottom:50px;
+}
+.best-sellers.proposes .title-text{
+	margin-bottom:40px;
+}
+.best-sellers.space-padding-tb-30{
+	padding-top:30px !important;
+}

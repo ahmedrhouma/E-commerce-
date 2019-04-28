@@ -1,0 +1,25 @@
+.brand-container{
+	display: inline-block;
+	width: 100%;
+	border-top:1px solid $gray-lighter;
+	border-bottom:1px solid $gray-lighter;
+	padding:20px 0px;
+	.slider-brand{
+		.item{
+			img{
+				width: auto;
+				max-width: 100%;
+			}
+		} 
+
+	}
+	.owl-carousel{
+		.owl-controls{
+			.owl-nav{
+				.owl-prev,.owl-next{
+					display: none;
+				}
+			}
+		}
+	} 
+}

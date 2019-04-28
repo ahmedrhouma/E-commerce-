@@ -1,0 +1,262 @@
+/** 6.6.1 Home page 2 **/
+.carousel-control{
+	opacity:100;
+	height:30px;
+	width:30px;
+	top:50%;
+	margin-top:-15px;
+	@include transition(all 0.3s ease 0s);
+	&:hover{
+		i{
+			color: $brand-primary;
+		}
+	}
+	&.left{
+		left: 20px;
+		&:hover{
+			left: 10px;
+		}
+	}
+	&.right{
+		right: 20px;
+		&:hover{
+			right: 10px;
+		}
+	}
+	i{
+		font-size: 30px;
+	}
+}
+// Slide Show
+.slide-show-ver1{
+	background:#212121;
+}
+.slide-show-ver2{
+	background:url(../images/slide-show-2.jpg)no-repeat;
+}
+.slide-show-ver3{
+	background:url(../images/Dana-home3-slideshow.jpg)no-repeat;
+	background-size:cover;
+	margin-top:-5px;
+}
+.tp-banner-container{
+	width: 100% !important;
+	left: 0px !important;	
+	background:transparent !important;
+	span{
+		display: inline-block;
+		width: 100%;
+		font-family: "Montserrat";
+		font-weight: 700;
+		font-size: 16px;
+		color: #666;
+		@include transition(all 0.3s ease 0s);
+	}
+	.tp-caption{
+		img{
+			position: absolute;
+			top: 0px;
+		}
+	}
+	.large_bold_orange{
+		text-transform: uppercase;
+		color: #eebb45;
+		font-size: 70px;
+		&.size-123{
+			font-size: 123px;
+		}
+		&.size-90{
+			font-size: 90px;
+		}
+		&.size-80{
+			font-size: 80px;
+		}
+		&.size-60{
+			font-size: 60px;
+		}
+		&.size-20{
+			font-size: 20px;
+		}
+		&.size-18{
+			font-size: 18px;
+			line-height: 25px;
+		}
+		&.size-14{
+			font-size: 14px;
+		}
+		&.size-25{
+			font-size: 25px;
+		}
+		&.weight-800{
+			font-weight: 800;
+		}
+		&.weight-700{
+			font-weight: 700 ;
+		}
+		&.weight-600{
+			font-weight: 600;
+		}
+		&.weight-400{
+			font-weight: 400 ;
+		}
+		&.text-shadow{
+			text-shadow: -7px 11px 76px rgba(0, 0, 0, 0.46);
+		}
+		&.center{
+			text-align: center;
+		}
+	}
+	.uppercase{
+		text-transform:uppercase ;
+	}
+	.capitalize{
+		text-transform: capitalize ;
+	}
+	.transform-none{
+		text-transform: none ;
+	}
+	.tp-caption{
+		.text-span{
+			font-size: 120%;
+			width: auto;
+			display: inline-block;
+			color: #fff;
+		}
+	}
+	.link-1{
+		display: inline-block;
+		text-transform: none;
+		background: transparent;
+		font-weight: 600;
+		border:2px solid #fff;
+		text-align: center;
+		padding: 0 40px 0px 30px;
+		font-size: 14px;
+		border-radius: 25px;
+		color: #fff;
+		position: relative;
+		a{
+			color: #fff;
+		}
+		&.icons{
+			font-size: 22px;
+			line-height: 50px;
+			padding:0 14px;
+			background:#4e4e4e;
+			border-radius: 50%;
+			@include transition(all 0.3s ease-out 0s);
+			box-shadow:0px 0px 0px 5px rgba(245,198,21,0.3);
+			font-family: "Material-Design-Iconic-Font";
+			background:#f5c615;
+			color: #fff;
+			border:none;
+			font-weight: 400;
+			a{
+				&:hover{
+					color: #fff;
+				}
+			}
+			&.icons-v2{
+				background:#4e4e4e;
+				box-shadow:0px 0px 0px 5px rgba(0,0,0,0.3);
+				a{
+					font-family:"FontAwesome";
+				}
+				&:hover{
+					background:#f5c615;
+					box-shadow:0px 0px 0px 5px rgba(245,198,21,0.3);
+				}
+			}
+			&:hover{
+				background:#4e4e4e;
+				box-shadow:0px 0px 0px 5px rgba(0,0,0,0.3);
+			}
+		}
+		&.bg-brand{
+			background-color: $brand-primary;
+			border: 1px solid $brand-primary;
+		}
+		&.bg-green{
+			background: $brand-home2;
+			border: 1px solid $brand-home2;
+		}
+		&.border-green{
+			background: transparent;
+			border: 1px solid #b6b6b6;
+		}
+		&.height-50{
+			line-height: 45px;
+		}
+		&.height-40{
+			line-height: 38px;
+		}
+		&.font-size13{
+			font-size: 13px;
+		}
+		&.home2{
+			padding:0 20px;
+		}
+	}
+	.font-op{
+		font-family: "Open Sans" ;
+	}	
+	.font-re{
+		font-family: "TXGR" ;
+		font-size: 36px;
+	}
+	.font-nel{
+		font-family: "NexaLight" ;
+	}
+	.font-mo{
+		font-family: "Montserrat" ;
+		font-weight:700 ; 
+	}
+	.font-ar{
+		font-family: "Arial";
+	}
+	.color-blue{
+		color: #74cfe2 ;
+	}
+	.color-white{
+		color: #eeeeee ;
+	}
+	.color-grayd{
+		color: $gray-dark ;
+	}
+	.color-brand{
+		color: $brand-primary;
+	}
+	.color-brown{
+		color: #623f30 ;
+	}
+	.bg-brown{
+		background: #623f30 ;
+	}
+	.color-gray{
+		color: $gray ;
+	}
+	.color-border{
+		color: #000 ;
+		text-shadow:
+		2px 2px 0 #fff,
+    /* Simulated effect for Firefox and Opera
+       and nice enhancement for WebKit */
+   -1px -1px 0 #fff,  
+    1px -1px 0 #fff,
+   -1px  1px 0 #fff,
+    1px  1px 0 #fff;
+	}
+}
+.owl-carousel{
+	.owl-nav{
+		display: none;
+	}
+}
+ @media (min-width: 1025px) {
+	.menu-mobile{
+		display: none !important;
+	}
+ }
+ .best-sellers .tab-container .owl-stage-outer{
+ 	padding-bottom:25px !important;
+ }

@@ -1,0 +1,141 @@
+.effect-v6{	
+	background-color: #000;
+	overflow: hidden;
+	position: relative;	
+	margin: 0 auto;
+	img {
+	    @include opacity(1);
+		@include transition (opacity 0.35s ease 0s);
+		width: 100%;
+	}
+	.action {
+	    transform: translate3d(0px, -100px, 0px);
+    	transition: opacity 0.35s ease 0s, transform 0.35s ease 0s;
+    	opacity: 0;
+    	position: absolute;
+    	top: 50%;
+    	width: 100%;
+    	text-align: center;
+    	i.icons{
+    		color: $gray;
+    		font-size: 22px;
+    		margin: 0 10px;
+    		&:hover{
+    			color: $brand-primary !important;;
+	    		background: none !important;
+    		}
+    	}
+	}
+	
+	/* style for hover */
+	&:hover{
+		border-color: $brand-primary;
+		img {
+			@include opacity(0.3);
+		}
+		.action {
+		    opacity: 1;
+   			transform: translate3d(0px, 0px, 0px);
+		}
+
+	}
+}
+.about-content{
+	background-color:#eee;
+	.banner-title{
+		text-align: center;
+		h3{
+			font-size: 18px;
+			text-transform: uppercase;
+			line-height: 30px;
+			font-family: "texgyreadventorbold";
+		}
+		p{
+			font-family: "Lora";
+			font-style: italic;
+			color: $gray;
+			line-height: 20px;
+		}
+	}
+}
+.our-skills{
+	h3{
+		font-family: "texgyreadventorbold";
+		color: $gray;
+		text-transform: uppercase;
+		font-size: 14px;
+		margin-bottom: 10px;
+	}
+	.progress-bar-success{
+		background: $brand-primary;
+	}
+	.progress-bar{
+		box-shadow:none;
+		position: relative;
+		span{
+			position: absolute;
+			top:-30px;
+			right: -15px;
+			color: $gray;
+			font-family: "texgyreadventorbold";
+			font-size: 14px;
+		}
+	}
+	.progress{
+		border-radius:0;
+		height: 8px;
+		box-shadow:none;
+		overflow: visible;
+
+	}
+}
+.content-about{
+	display: inline-block;
+	width:100%;
+	padding:60px;
+	.col-md-6{
+		padding: 0px;
+		img{
+			width: 100%;
+		}
+	}
+	.text-about{
+		padding-left:100px;	
+		padding-top:100px;
+		.title-about{
+			h3{
+				padding-left:0px;
+				letter-spacing: 50px;
+				font:800 50px/50px "Open Sans";
+				&:after{
+					left:-70px;
+				}
+			}
+			h4{
+				font:800 50px/50px "Open Sans";
+				letter-spacing: 50px;
+				text-transform: uppercase;
+				margin:20px 0px; 
+			}
+		}
+		.col-md-6{
+			padding-right:10px;
+			margin-top:30px;
+			h4{
+				font:700 14px/20px "Open Sans";
+				color: #000;
+				margin-bottom: 30px;
+				text-transform: uppercase;
+			} 
+			p{
+				font:400 14px/25px "Open Sans";
+				color: #a1a1a1;
+				margin-bottom: 20px;
+			}
+			&:last-child{
+				padding-right:0px;
+				padding-left:10px;
+			}
+		}
+	}
+}

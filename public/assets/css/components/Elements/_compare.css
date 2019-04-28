@@ -1,0 +1,92 @@
+.compare {
+  display: inline-block;
+  width: 100%;
+  float: left;
+  margin-bottom: 50px;
+}
+
+.compare ul {
+  display: inline-block;
+  width: 25%;
+  float: left;
+}
+
+.compare ul.title-compare li {
+  color: #262626;
+  border-left: none;
+  padding-left: 0px;
+  font-weight: 400;
+}
+
+.compare ul.title-compare li.battery {
+  padding: 30px 0px;
+}
+
+.compare ul li {
+  line-height: 30px;
+  padding: 28px 0px;
+  border-top: 1px solid #dfdfdf;
+  border-left: 1px solid #dfdfdf;
+  padding-left: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  min-height: 90px;
+}
+
+.compare ul li:first-child {
+  border-top: none;
+}
+
+.compare ul li.cateogry {
+  border-top: none;
+}
+
+.compare ul li.images {
+  min-height: 370px;
+  padding-top: 0px;
+}
+
+.compare ul li.battery {
+  padding: 10px 0px 10px 30px;
+}
+
+.compare ul li p {
+  text-transform: none;
+  color: #7e7e7e;
+  font-weight: 400;
+}
+
+.compare ul li.battery1 {
+  min-height: 330px;
+}
+
+.compare ul li .product {
+  position: relative;
+}
+
+.compare ul li .product .action {
+  position: absolute;
+  z-index: 9;
+  left: 0px;
+  top: 0px;
+  text-align: left;
+}
+
+.compare ul li .product .action a {
+  opacity: 1;
+  display: block;
+}
+
+.compare ul li .product .action a i {
+  text-align: center;
+}
+
+.compare ul.add-compare li.images {
+  padding-top: 50px;
+  text-align: center;
+}
+
+.compare ul.add-compare li.images a {
+  text-transform: none;
+  color: #353535;
+}

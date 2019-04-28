@@ -1,0 +1,88 @@
+.shipping-container{
+	margin: 110px 0px;
+	display: inline-block;
+	width: 100%;
+	.col-md-4{
+		padding: 0px 15px;		
+		.shipping-item{
+			border: 1px dashed #cdcdcd;
+			padding: 20px;
+			border-radius: 10px;
+			text-align: center;
+			position: relative;
+			&:hover{
+				border: 1px dashed $brand-primary;cursor: pointer;
+				.images{
+					background-image: url(../images/Futurelife-icon-shipping-hover.png);
+				}
+				.text h3{
+					color: $brand-primary;
+				}
+				.text p{
+					color: $brand-primary;	
+				}
+			}
+			%after{
+				position: absolute;
+				content: "";
+				width: 10px;
+				height: 10px;
+				z-index: 3;
+				top: -2px;
+				right: -3px;
+				border-radius: 100%;
+				box-shadow: inset 0 0 0 4px white, 0 0 0 3px white;
+				border:solid transparent 3px;
+			}
+			.images{
+				display: inline-block;
+				height: 50px;
+				width: 100%;
+				background: url(../images/Futurelife-icon-shipping.png)no-repeat scroll center top;
+				margin: 15px 0px;
+				&:after,&:before,{
+					@extend %after;
+				}				
+				&:before{
+					right: inherit;
+					left: -3px;
+				}			
+			}
+			.text{
+				&:after,&:before,{
+					@extend %after;
+					top: inherit;
+					bottom: -2px;
+				}				
+				&:before{
+					right: inherit;
+					left: -3px;
+				}
+				h3{
+					font-size: 16px;
+					font-weight: 700;
+					color: #666;
+					line-height: 24px;
+				}
+				p{
+					font-family: "Lora";
+					font-style: italic;
+					color: #aaa;
+					line-height: 24px;
+					margin-bottom: 20px;
+				}	
+			}
+			
+		}
+		&:nth-child(2){
+			.shipping-item{
+				.images{background-position: center top -124px;}
+			}
+		}
+		&:last-child{
+			.shipping-item{
+				.images{background-position: center top -246px;}
+			}
+		}
+	}
+}

@@ -1,0 +1,138 @@
+.ordering{
+	font-size: 13px;
+	color: #333;
+	display: inline-block;
+	width: 100%;
+	margin-bottom:50px;
+	.ordering-left{
+		float: left;
+		span{
+			background: none;
+			width: auto;
+			font-weight: 800;
+			line-height: 36px;
+			font-size: 14px;
+		}
+		a{
+			position:relative;
+			padding:0px;
+			margin-left:20px;
+			font-size: 14px;
+			font-weight: 600;
+			&:after{
+				position:absolute;
+				content: "";
+				bottom: 6px;
+				left: 50%;
+				right: 50%;
+				height: 2px;
+				background:#8d8d8d;
+				@include transition(all 0.3s ease 0s);
+			}
+			&:hover{
+				&:after{
+					left: 0px;
+					right: 0px;
+				}
+			}
+		}
+	}
+	.ordering-right{
+		float: right;
+	}
+	a{
+		display: inline-block;
+		height: 35px;
+		line-height: 35px;
+		color: #333;
+		padding: 0 15px;
+		vertical-align: bottom;
+	}
+	span{
+		display: inline-block;
+		height: 35px;
+		width: 35px;
+  		background: #fff url(../images/Dana-icon-col-list.png)no-repeat scroll center bottom 9px;
+  		vertical-align: bottom;
+  		cursor: pointer;
+  		&.list{
+  			background-position: center top 8px; 
+  		}
+  		&:hover{
+  			@extend .active;
+  		}
+	}
+	.order-by{
+		display: inline-block;
+		margin-left: 5px;
+		position: relative;
+		&::after{
+			position: absolute;
+			content: "";
+			top: 9px;
+			right: 10px;
+			font-family: "Material-Design-Iconic-Font";
+			line-height: 1;
+			font-size: 16px;
+			font-style: normal;
+		}
+	}
+	form{
+		vertical-align: bottom;
+		select{
+			appearance: none;
+			border: none;
+			box-shadow: none;
+			padding:6px 25px 6px 15px;
+			background: #f2f2f2;
+			outline: none;
+			border-radius:25px;
+		}
+	}
+}
+p.result-count{
+	float: right;
+	padding-bottom: 8px;
+	border-bottom: 1px solid #b2b2b2;
+	margin-top: 7px;
+	font-family:"Lora";
+	font-style: italic;
+	font-size: 13px;
+}
+.pagination {
+	span{
+		&.page-numbers{
+			border:2px solid #000;
+			&:hover{
+				background:#fff;
+			}
+		}
+	}
+	.page-numbers{
+		font-family: "Montserrat";
+		color: #1e1e1e;
+		@include size(33px,33px);
+		font-size:16px;
+		background:#fff;
+		border:2px solid #d9d9d9;
+		font-style: normal;
+		text-align: center;
+		line-height:29px;
+		margin-left:5px;
+		margin-right:5px;
+		&:first-child{
+			margin-left:0px; 
+		}
+		&:hover{
+			background:#fff;
+			color: #1e1e1e;
+			border-color: #000;
+		}
+	}
+}
+nav.pagination{
+	margin-top:30px;
+	font-family:"Montserrat";
+	font-size:16px;
+	font-style:normal;
+}

@@ -1,0 +1,761 @@
+.slider-product{
+	display: inline-block;
+	width: 100%;
+	position: relative;
+	.tabs{
+		display: inline-block;
+		width: 100%;
+		text-align: center;
+		li{
+			display: inline-block;
+			cursor: pointer;
+			font-size: 16px;
+			font-weight: 700;
+			text-transform: uppercase;
+			color: $gray-dark;
+			margin-bottom: 20px;
+			padding: 0 15px;
+			padding-top: 0px;
+			&:hover,&.active{
+				color: $brand-primary;
+			}
+		}
+	}
+	.title{
+		h3{
+			font-weight:700;
+			font-size: 42px;
+			color: #212121;
+			text-transform: uppercase;
+			padding-left:70px;
+			position: relative;
+			&:after{
+				position: absolute;
+				content: "";
+				left: 0px;
+				top: 50%;
+				background: $brand-primary;
+				width: 56px;
+				height: 2px;
+			}
+			span{
+				color: $brand-primary;
+			}
+		}
+	}
+}
+.tab-container{
+	.owl-stage-outer{
+		padding: 20px 0px;
+	}
+}
+.slider-product{
+	padding:50px 0px;
+}
+.featured-product{
+	.container{
+		position: relative;
+		background: url(../images/Dana-home1-bg-featured.jpg)no-repeat scroll top center;
+	}
+	.wrap-time{
+		position: absolute;
+		bottom:0px;
+		left: 0px;
+		text-align: center;
+		h3{
+			font-weight: 800;
+			font-size: 16px;
+			color: #1b1b1b;
+			text-transform: uppercase;
+			line-height: 20px;
+			margin-bottom:10px; 
+		}
+		p{
+			font-weight: 400;
+			color: #7c7c7c;
+			line-height: 20px;
+			margin: 5px 0 25px;
+			&.best-price{
+				color: $brand-primary;
+				text-transform: uppercase;
+				font-size:16px;
+				font-weight: 400;
+				margin-top:25px; 
+				span{
+					color: #535353;
+					margin-right:5px; 
+					&.price-old{
+						color: #a8a8a8;
+						text-decoration: line-through;
+					}
+				}
+			}
+		}
+		.distance{
+			display: inline-block;
+			height: 88px;
+			width: 88px;
+			background:url(../images/Dana-home1-time-featured.png) no-repeat;
+			margin:0px 5px; 
+			&.minutes{
+				background-image:url(../images/Dana-home1-time-featured1.png);
+			}
+			&.hours{
+				background-image:url(../images/Dana-home1-time-featured2.png);
+			}
+			&.day{
+				background-image:url(../images/Dana-home1-time-featured3.png);
+			}
+			.text{
+				text-transform: uppercase;
+				color: #7c7c7c;
+			}
+			.number{
+				font-weight:700;
+				font-size: 16px;
+				margin-top:20px; 
+			}
+		}
+	}
+	.products{
+		float: right;
+		width: 200px;
+		.product{
+			background:#f2f2f2;
+			display: block;
+			overflow: hidden;
+			-webkit-transition:all 0.6s ease 0s;
+			@include transition(all 0.6s ease 0s);
+			width: 100%;
+			float: right;
+			width: 200px;
+			position: relative;	
+			box-shadow:0px 3px 40px 0px rgba(0, 0, 0, 0.51);
+			z-index: 99;
+			.action{
+				width: auto;
+				position:absolute;
+				right: 10px;
+				bottom:20px;
+				a{
+					margin:0px; 
+					transform:translate(0px, 60px);
+					opacity: 0;
+					&:first-child{
+						@include transition(all 0.2s ease-out 0.2s);
+					}
+					&:nth-child(2){
+						@include transition(all 0.2s ease-out 0.2s);
+					}
+					&:nth-child(3){
+						@include transition(all 0.2s ease-out 0.2s);
+					}
+				}
+			}
+			.product-images{
+				display: inline-block;
+				float: left;
+				width: 200px;
+				margin-right:20px; 
+			}
+			.product-content{
+				position: absolute;
+				opacity: 0;
+				top: 0px;
+				left: 0px;
+				max-height: 200px;
+				color: #fff;
+				padding-top:20px;
+				width:570px;
+				p{
+					font-size: 14px;
+					line-height: 20px;
+					&.title{
+						font-size: 16px;
+						font-weight: 600;
+						color: $brand-primary;
+						line-height: 25px;
+					}
+				}
+				ul{
+					padding-top:10px;
+					li{
+						list-style-type: disc;
+						list-style-position: inside;
+						line-height: 23px;
+						font-size: 14px;
+					}
+				}
+			}
+			&:hover{
+				.icon-cat{
+					opacity: 1;
+				}
+				.product-content{
+					opacity: 1;
+					position: inherit;
+				}
+				.action{
+					a{
+						transform:translate(0px, 0px);
+						opacity: 1;
+					}
+				}
+				width: 570px;
+				background:#212121;
+			}
+			.icon-cat{
+				position:absolute;
+				height: 53px;
+				width: 53px;
+				background:#e71825 url(../images/Dana-icon-header.png)no-repeat scroll center -45px;
+				left: 0px;
+				top: 0px;
+				opacity: 0;
+				font-size: 0px;
+			}
+		}
+	}
+	.images{
+		position: absolute;
+		left: 0px;
+		top: 100px;
+		max-width:575px;
+		img{
+			width: 100%;
+		}
+	}
+	&.featured-product-home2{
+		.container{
+			background:none;
+		}
+		.images{
+			left: -130px;
+		}
+		.products{
+			width: 602px;
+			border-right:1px solid $gray-lighter;
+			border-top:1px solid $gray-lighter;
+			.product{
+				width: 300px;
+				float: left;
+				background:none;
+				box-shadow:none;
+				text-align: center;
+				padding:30px;
+				border-left:1px solid $gray-lighter;
+				border-bottom:1px solid $gray-lighter;
+				.wrap-title{
+					text-align: left;
+				}
+				.product-images{
+					margin: 0px auto;
+					float: initial;
+				}
+				&:hover{
+					width: 300px;
+					background:none;
+					box-shadow:0 3px 40px 0 rgba(0, 0, 0, 0.2);
+				}
+				.action{
+					position:inherit;
+					margin:20px 0px; 
+				}
+			}
+		}
+	}
+	&.featured-product-home2{
+		.wrap-time{
+			bottom: 0px;
+			left: 0px;
+		}
+		.images{
+			top: 0px;
+		}
+		.products{
+			.product{
+				padding:25px 25px 0px 25px;
+				.icon-cat{
+					position:relative;
+					height: auto;
+					background:none;
+					font-size:14px;
+					color: #1965b2;
+					font-weight: 400;
+					width:100%;
+					opacity: 1;
+				}
+				.product-images{
+					width:auto;
+					max-width: 100%;
+				}
+				.action{
+					bottom:10px;
+				}
+			}
+		}
+	}
+}
+// Only product-tab-content
+.slider-product{
+	.products{
+		ul.description{
+			display: block;
+			position: relative;
+			li{
+				color: #000;
+				font-size: 14px;
+				color: #454545;
+				line-height: 20px;
+				max-width: 200px;
+				margin: 5px 0px;
+				list-style-position: outside;
+				list-style-type: disc;
+				margin-left:15px;
+				display: list-item;
+			}
+		}
+	}
+}
+.popular-product{
+	background: #f6f6f6;
+	padding:50px 0px;
+	.title-text{
+		margin-bottom:30px; 
+	}
+	.container{
+		position: relative;
+	}
+	.tabs{
+		position: absolute;
+		right: 10px;
+		top: 0px;
+		width: auto;
+	}
+	.title{
+		margin-bottom:40px; 
+	}
+	.tabs{
+		li{
+			text-indent: -99999px;
+			width: 50px;
+			height: 40px;
+			padding-bottom:8px;
+			margin-left:20px; 
+			&:hover,&.active{
+				border-bottom:5px solid $brand-primary;
+			}
+			&:nth-child(1){
+				background:url(../images/icon-slider-product.png)no-repeat scroll center 7px;
+			}
+			&:nth-child(2){
+				background:url(../images/icon-slider-product.png)no-repeat scroll center -53px;
+			}
+			&:nth-child(3){
+				background:url(../images/icon-slider-product.png)no-repeat scroll center -122px;
+			}
+			&:nth-child(4){
+				background:url(../images/icon-slider-product.png)no-repeat scroll center -203px;
+			}
+			&:nth-child(5){
+				background:url(../images/icon-slider-product.png)no-repeat scroll center -273px;
+			}
+			&:nth-child(6){
+				background:url(../images/icon-slider-product.png)no-repeat scroll center -347px;
+			}
+		}
+	}
+	.products{
+		display: inline-block;
+		width: 100%;
+		background:#fff;
+		.product{
+			display: inline-block;
+			width: 25%;
+			float: left;
+			padding:20px;
+			border-bottom:1px solid #efefef;
+			height: 420px;
+			@include transition(all 0.3s ease 0s);
+			z-index: 1;
+			&:hover{
+				box-shadow:0px 3px 40px 0px rgba(0, 0, 0, 0.2);
+				z-index: 2;
+				.action{
+					a{
+						transform:translate(0px, 0px);
+					}
+				}
+			}
+			&:first-child{
+				float: left;
+				width: 50%;
+				border:none;
+				.product-images{
+					float: left;
+					width: 50%;
+				}
+				.wrap-title{
+					width: 50%;
+					float: right;
+					margin-top:80px;
+					@media (min-width:1200px){
+						padding-left:20px;
+					}
+					.product-price{
+						margin-bottom:0px; 
+					} 
+				}
+				.action{
+					position:absolute;
+					bottom:20px;
+					right:0px;
+					width: 50%;
+					text-align: left;
+					@media (min-width:1200px){
+						padding-left:20px;
+					}
+					a{
+						&:first-child{
+							i{
+								margin-left:0px; 
+							}
+						}
+					}
+				}
+			}
+			&:nth-child(2),&:nth-child(3){
+				border-left:1px solid #efefef;
+			}
+			&:nth-child(4),&:nth-child(5),&:nth-child(6){
+				border-top:1px solid #efefef;
+				border-left:1px solid #efefef; 
+				border-bottom:none;
+				margin-top:-1px; 
+			}
+			&:nth-child(4){
+				border-left:none;
+			}
+			&:last-child{
+				border-left:1px solid #efefef;
+			}
+		}
+	}
+}
+// Best Seller
+.best-sellers{
+	background: #f6f6f6;
+	padding-bottom:50px;
+	.container{
+		position:relative;
+	}
+	ul{
+		position:absolute;
+		top: 0px;
+		right: 10px;
+		width: auto;
+		li{
+			display: inline-block;
+			font-weight: 400;
+			cursor: pointer;
+			margin:0px 15px;
+			font-size: 16px;
+			color: #808080;
+			&.active{
+				font-weight: 600;
+				border-bottom:3px solid $brand-primary;
+				color: #2b2b2b;
+			}
+			&:last-child{
+				margin-right:0px;
+			}
+		}
+	}
+	.title{
+		margin-bottom:30px; 
+	}
+	.slide-product-images{
+		position: static;
+	}
+	.products{
+		display: inline-block;
+		width: 100%;
+		background:#fff;
+		.product{
+			display: inline-block;
+			width: 25%;
+			float: left;
+			padding:20px;
+			border-bottom:1px solid #efefef;
+			border-left:1px solid #efefef;
+			height: 420px;
+			@include transition(all 0.3s ease-out 0s);
+			z-index: 1;
+			.product-images{
+				position:static;
+			}
+			.icon-cat{
+				color: #1965b2;
+				font-size: 14px;
+				font-weight: 400;
+				text-transform: capitalize;
+			}
+			&:hover{
+				box-shadow:0px 3px 40px 0px rgba(0, 0, 0, 0.2);
+				.action{
+					a{
+						transform: translate(0px, 0px);
+					}
+				}
+				z-index: 2;
+			}&:first-child{
+				position:relative;
+				.icon-cat{
+					width: 100%;
+					display: inline-block;
+					text-align:center;
+				}
+				.wrap-title{
+					text-align: center;
+				}
+				float: left;
+				width: 50%;
+				border:none;
+				height: 840px;
+				.owl-dots{
+					width: 50%;
+					bottom:40px;
+				}
+				.action{
+					width: 50%;
+					position:absolute;
+					bottom:40px;
+					right: 0px;
+				}
+			}
+		}
+	}
+	.owl-carousel{
+		 .owl-controls{
+		 	.owl-nav{
+		 		.owl-prev,.owl-next{
+		 			display: none;
+		 		}
+		 	}
+		 	 .owl-dots{
+		 	 	display: inline-block !important;
+		 	 	position: absolute;
+		 	 	bottom:0px;
+		 	 	left: 0px;
+		 	 	width: 100%;
+		 	 	text-align: center;
+		 	 	.owl-dot{
+		 	 		display: inline-block;
+		 	 		margin:0 5px; 
+		 	 		&.active,&:hover{
+		 	 			span{
+		 	 				background: $brand-primary;
+		 	 				height: 30px;
+		 	 				border-radius:15px;
+		 	 				margin-top:0px;
+		 	 				vertical-align: -10px;
+		 	 			}
+		 	 		}
+		 	 		span{
+		 	 			display: inline-block;
+		 	 			height: 10px;
+		 	 			width: 10px;
+		 	 			background:$gray;
+		 	 			border-radius:50%;
+		 	 			vertical-align: 0px;
+		 	 			@include transition(all 0.3s ease 0s);
+		 	 		}
+		 	 	}
+		 	 }
+		 }
+	}
+	.slide-product-tab{
+		padding-bottom:50px;
+	}
+	&.proposes{
+		background:#fff;
+		.container{
+			background:url(../images/Dana-home1-bg-featured.jpg)no-repeat left top;
+		}
+		.title-text{
+			h3{
+				margin-top:80px;
+				margin-bottom:20px; 
+			}
+		}
+		ul.tabs2{
+			top:95px;
+		}
+		ul.description{
+			li{
+				margin-left:25px !important;
+			}
+		}
+		.tab-container{
+			float: right;
+			max-width: 1140px;
+			padding:0 30px 0px 90px;
+			margin-right:-30px;
+			overflow: hidden;
+		}
+		.slide-product-tab1{
+			max-width: 960px;
+		}
+		.owl-carousel .owl-stage-outer{
+			overflow: visible;
+		}
+		.owl-carousel .owl-controls .owl-dots{
+			width: 30px;
+			bottom:50%;
+			left: -100px;
+			.owl-dot{
+				&.active,&:hover{
+					span{
+						height: 10px;
+						vertical-align: 0px;
+						background:#bbbbbb;
+					}
+				}
+			}
+		}
+		.products{
+			.product{
+				width: 50%;
+				height: 293px;
+				border:1px solid $gray-lighter;
+				position:relative;
+				.icon-cat{
+					font-size: 0px;
+					position:absolute;
+					top: 0px;
+					left: 0px;
+					background:#e71825 url(../images/Dana-icon-header.png)no-repeat scroll center -45px;;
+					display: inline-block;
+					width: 53px;
+					height: 53px;
+					z-index: 99;
+					&.watch{
+						background-position: center -100px;
+					}
+					&.phone{
+						background-position: center -160px;
+					}
+					&.game{
+						background-position: center -225px;
+					}
+					&.laptop{
+						background-position: center -277px;
+					}
+					&.televison{
+						background-position: center -325px;
+					}
+
+				}
+				.wrap-title{
+					float: right;
+					width: 50%;
+				}
+				.product-images{
+					float: left;
+					width: 50%;
+					padding-top:20px;
+					@media (min-width:568px){
+						padding-right:15px;
+					}
+				}
+				.action{
+					width:50%;
+					float: right;
+					text-align: left;
+					left: inherit !important;
+					right: 0px;
+					a{
+						text-align: center;
+					}
+				}
+				&:first-child{
+					border:1px solid $gray-lighter;
+					border-right:none;
+					height: 586px;	
+					.product-images{
+						width: 100%;
+					}
+					.wrap-title{
+						width: 50%;
+						text-align: left;
+						float: left;
+					}
+					.product-images{
+						text-align: center;
+						img{
+							max-width: 270px;
+						}
+					}
+					.action{
+						bottom:100px;
+						@media(max-width:767px) and (min-width:480px){
+							bottom: 0px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.slider-product{
+	.product{
+		@include transition(all 0.5s ease 0s);
+		&:hover{
+			.action{
+				a{
+					opacity: 100;
+					text-align: center;
+				}			
+			}
+
+		}
+	}
+}
+
+// slider-product-images
+.slide-product-images {
+	.owl-dots{
+		text-align: center;
+		.owl-dot{
+			display: inline-block;
+			margin-right:20px;
+			background-size:100% auto;
+			border:1px solid #fff;
+			width: 60px;
+			height: 60px;
+			text-align:center;
+			&:last-child{
+				margin-right:0px;
+			}
+			&.active{
+				border:1px solid #000;
+			}
+		}
+	}
+}
+.tab-content{
+	transition:transform 0.6s ease 0s;
+	transform:translate(0px, 40px);
+	&:first-child{
+		transform:translate(0px, 0px);
+	}
+	&.active{
+		transform:translate(0px, 0px);	
+	}
+}
+.best-sellers .product-images .owl-carousel .owl-controls .owl-dots .owl-dot{
+	span{
+		width:0px;
+		height:0px;
+	}
+}

@@ -1,0 +1,32 @@
+.title-text.size-25 h3{
+	font-size:15px;
+}
+.bottom-product-footer{
+	.col-md-4{
+		.product-content .product-price{
+			min-height:43px;
+		}
+		.product-content .product-name{
+			display: block;
+			min-height:55px;
+			font-size: 13px;
+		}
+		.product-images{
+			display: block;
+			width: 150px;
+			float: inherit;
+			margin: 0 auto;
+		}
+		&:nth-child(2){
+			.product-content .product-price{
+				min-height:inherit;
+			}
+		}
+	}
+}
+.bottom-product-footer{
+	.col-md-4{
+		width: 33.33%;
+		float: left;
+	}
+}

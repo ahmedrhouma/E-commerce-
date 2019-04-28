@@ -1,0 +1,388 @@
+/** 6.5.1. General **/
+#footer {
+	display: inline-block;width: 100%;
+	padding: 100px 0px 0px;
+	background:#212121;
+	float:left;
+	h3{
+		color: #fff;text-transform: uppercase;margin-bottom: 20px;line-height: 24px;
+		font-family: "Montserrat";
+		font-weight: 700;
+		font-size: 18px;
+	}
+	.footer-top{
+		padding-bottom:60px;
+		.logo{
+			display: inline-block;
+			margin-bottom:30px; 
+		}
+		p{ 
+			color: #fff;
+			line-height: 30px;
+			max-width: 360px;
+			margin-bottom:30px; 
+		}
+		.infomation{
+			p{
+				color: #fff;
+				margin-bottom:0px; 
+			}
+			i{
+				font-size: 16px;
+				color: $brand-primary;
+				line-height: 24px;
+				margin-right: 10px;
+			}
+		}
+		.col-md-4{
+			ul{
+				display: inline-block;
+				float: left;
+				li{
+					float: left;
+					width: 50%;
+				}
+			}
+		}
+		ul li a{
+			font-size: 14px;
+			color: #fff;
+			line-height: 30px;
+			transition:all 0.5s ease-out 0s;
+			&:hover{
+				color: $brand-primary;
+			}
+		}
+	}
+	.footer-bottom{
+		background: #1e1e1e;
+		padding: 30px 0px;margin-top: 20px;
+		.col-md-8{
+			p{
+				float: left;
+				text-transform: uppercase;
+				color: #fff;
+				margin-right:20px;
+				margin-top:5px;  
+			}
+			a{
+				display: inline-block;
+				background:#fff;
+				width: 30px;
+				height: 30px;
+				border-radius:50%;
+				text-align: center;
+				margin-right:8px; 
+				&:hover{
+					background:$brand-primary;
+					i{
+						color: #fff;
+					}
+				}
+				i{
+					font-size:18px;
+					margin-top:5px;
+					color: #3b3970; 
+				}
+			}
+		}
+		.col-md-4{
+			float: right;
+			text-align: right;
+		}
+	}
+}
+// bottom home 1
+.bottom-home1{
+		position: relative;
+		.col-md-3{
+			&:first-child{
+				padding-left: 0px;
+			}
+		}
+		&:before{
+			position: absolute;
+			content: "";
+			left: 0px;
+			right: 0px;
+			height: 6px;
+			background: url(../images/Hermes-border-bottom.png) repeat-x;
+			bottom: 0px;
+		}
+		p{
+			color: #aaaaaa;
+			font-family: "TXGR";
+			font-size: 13px;
+			line-height: 20px;
+		}
+		
+		.products-item{
+			margin-bottom: 30px;
+			.product-images{
+				width: 80px;
+				height: auto;
+				display: inline-block;
+				margin-right: 10px;
+				vertical-align: -30px;
+				img{
+					&.secondary_image{
+						opacity: 0;
+						width: 100%;
+						height: auto;
+						position: absolute;
+					}
+				}
+			}
+			.product-content{
+				display: inline-block;
+				.product-name{
+					font-family: "TXGR";
+					color: #888;
+					margin-bottom: 5px;
+					display: inline-block;
+				}
+				.product-price{
+					font-size: 16px;
+					color: #ddd;
+					font-family: "TXGB";
+					margin-bottom: 15px;
+				}
+				.add-to-cart{
+					text-transform: uppercase;
+					font-size: 13px;
+				}
+			}
+		}
+	}
+/** 6.5.2. Footer Version 1 **/
+#footer {
+	&.footer-v2 {
+		margin-top: 0px;
+		.footer-bottom{
+			border-top: 1px solid #efe6ef;
+		}
+	}
+}
+/** 6.5.3. Footer Version 2 **/
+#footer {
+	&.footer-v2 {
+
+	}
+}
+/** 6.5.3. Footer Version 3 **/
+#footer {
+	&.footer-v3 {
+		margin-top: 0px;
+		background: none;
+		border-top: 1px solid $gray-lighter;
+		.footer-top{
+			margin-bottom:30px; 
+			position: relative;
+			display: inline-block;
+			width: 100%;
+			.col-md-6{
+				h2{
+					a{
+						border: none;
+						padding:0px;
+						height: auto;
+						width: auto;
+						text-align: left;
+						font-size: 36px;
+						color: $gray-dark;
+					}
+				}
+			}
+			.col-md-6{
+				a{
+					border-color: $brand-home3;
+					color: $brand-home3;
+				}
+			}
+			a{
+				&:hover{
+					color: $brand-home3;
+				}
+			}
+			ul{
+				li{
+					a{
+						color: $gray-light;
+					}
+				}
+			}
+		}
+		h3{
+			color: $gray-dark;
+		}
+		.footer-bottom{
+			border: none;
+			margin-top: 0px;
+			padding:0px;
+			.col-md-6{
+				&:last-child{
+					text-align: right;
+					a{
+						color: $gray-light;
+						font-family: "TXGR";
+						&:nth-child(1),&:nth-child(2){
+							margin-right: 15px;
+						}
+						&:hover,&.active{
+							color: $home-v3-color;
+							text-decoration: underline;
+							i{
+								color: $home-v3-color;
+							}
+						}
+					}
+				}
+			}
+			p{
+				float: inherit;
+			}
+			.border-footer{
+				overflow: hidden;
+				border-top:1px solid $gray-lighter; 
+				padding: 30px 0px;
+				.col-md-6{
+					&:last-child{
+						padding-right: 0px;
+						a{
+							margin: 0px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+/** 6.5.3. Footer Version 4 **/
+#footer{
+	&.footer-v4{
+		background:$home-v3-color;
+		text-align: center;
+		.footer-bottom{
+			margin-top: 0px;
+			border-top: 1px solid #97dfe4;
+		}
+		a,p{
+			color: #fff !important;
+		}
+		.logo-footer{
+			font-size: 40px;
+			font-weight: 700;
+			text-transform: uppercase;
+			display: inline-block;
+		}
+		.share{
+			a{
+				font-family: "TXGR";
+				margin-right: 10px;
+				&:nth-child(1),&:nth-child(2){
+					margin-right: 20px;
+				}
+				&:last-child{
+					margin-right: 0px;
+				}
+				&.active{
+					text-decoration: underline;
+				}
+				i{
+					font-size: 18px;
+				}
+			}
+		}
+		.footer-bottom{
+			p{
+				width: 100%;
+				text-align: center;
+			}
+		}
+	}
+}
+/** 6.5.4. Footer Version 5 **/
+@include tablet {
+	#footer{
+		.footer-top{
+			.col-md-4{
+				margin: 50px 0px;
+				display: inline-block;
+				width: 100%;
+				ul.menu{
+					&:last-child{
+						text-align: right;
+						li{
+							a{
+								&:hover{
+									padding-right:15px;
+									padding-left: 0px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.footer-bottom{
+			.col-md-6{
+				text-align: center;
+				margin-bottom: 10px;
+			}
+			p{
+				float: inherit;
+			}
+		}
+	}
+	.banner-center{
+		.col-md-6,.col-md-3{
+			padding: 0px !important;
+		}
+		.col-md-6{
+			margin: 40px 0px;
+		}
+	}
+	.shipping-container{
+		.col-md-4{
+			&:nth-child(2){
+				margin: 20px 0px;
+			}
+		}
+	}
+	#footer.footer-v3 .footer-bottom .col-md-6:last-child{
+		text-align: center;
+	}
+}
+@include maxtable{
+	#footer{
+		.footer-top{
+			.col-md-4{
+				margin: 50px 0px;
+				display: inline-block;
+				width: 100%;
+				ul.menu{
+					&:last-child{
+						text-align: right;
+						li{
+							a{
+								&:hover{
+									padding-right:15px;
+									padding-left: 0px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.footer-bottom{
+			.col-md-6{
+				text-align: center;
+				margin-bottom: 10px;
+			}
+			p{
+				float: inherit;
+			}
+		}
+	}
+}

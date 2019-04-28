@@ -1,0 +1,76 @@
+/** 6.7.1. About Us **/
+
+/** 6.7.2. Contact Us **/
+
+/** 6.7.3. Shopping Cart**/
+
+/** 6.7.4. Page 404 **/
+.content-404{
+	text-align:center;
+	padding:130px 0px;
+	img{
+		max-width:100%;
+		margin-bottom:40px;
+	}
+	h3{
+		font:700 45px/50px "Open Sans";
+		margin-bottom:50px;
+		text-transform: uppercase;
+		color: #202020;
+	}
+	h4{
+		font:600 21px/30px "Open Sans";
+		color: #383838;
+		margin-bottom:20px; 
+	}
+	p{
+		max-width:710px;
+		font:400 14px/20px "Open Sans";
+		color: #636363;
+		margin: 0 auto 30px;
+	}
+	a{
+		&.link-button{
+			margin: 0px 10px;
+		}
+	}
+}
+.shopping-cart{
+	.breadcrumb{
+		margin-bottom: 50px;
+	}
+	.shipping-total{
+		margin-bottom: 80px;
+		display: inline-block;
+		width: 100%;
+
+	}
+
+}
+.wishlist{
+	.breadcrumb{
+		margin-bottom: 50px;
+	}
+}
+@include maxtable{
+	.shopping-cart{
+		.shipping-total{
+			.col-md-4{
+				padding: 0px;
+			}
+		}
+	}
+}
+@include maxmobile{
+	.page-404{
+		h1{
+			font-size: 150px;
+		}
+		h2{
+			font-size: 30px;
+		}
+		h3{
+			font-size: 14px;
+		}
+	}
+}

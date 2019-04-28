@@ -1,0 +1,82 @@
+.compare{
+	display:inline-block;
+	width:100%;
+	float: left;
+	margin-bottom:50px;
+	ul{
+		display: inline-block;
+		width: 25%;
+		float: left;
+		&.title-compare{
+			li{
+				color: #262626;
+				border-left:none;
+				padding-left:0px;
+				font-weight: 400;
+				&.battery{
+					padding:30px 0px;
+				}
+			}
+		}
+		li{
+			line-height: 30px;
+			padding:28px 0px;
+			border-top: 1px solid #dfdfdf;
+			border-left:1px solid #dfdfdf;
+			padding-left:30px;
+			font-weight: 700;
+			text-transform: uppercase;
+			min-height:90px;
+			&:first-child{
+				border-top:none;
+			}
+			&.cateogry{
+				border-top:none;
+			}
+			&.images{
+				min-height:370px;
+				padding-top:0px;
+			}
+			&.battery{
+				padding:10px 0px 10px 30px;
+			}
+			p{
+				text-transform: none;
+				color: #7e7e7e;
+				font-weight: 400;
+			}
+			&.battery1{
+				min-height:330px;
+			}
+			.product{
+				position: relative;
+				.action{
+					position:absolute;
+					z-index: 9;
+					left: 0px;
+					top: 0px;
+					text-align: left;
+					a{
+						opacity: 1;
+						display: block;
+						i{
+							text-align: center;
+						}
+					}
+				}
+			}
+		}
+		&.add-compare{
+			li{
+				&.images{
+					padding-top:50px;
+					text-align: center;
+					a{
+						text-transform: none;
+						color: #353535;
+					}
+				}
+			}
+		}
+	}
+}

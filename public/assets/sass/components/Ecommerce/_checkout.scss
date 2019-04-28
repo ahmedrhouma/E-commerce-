@@ -1,0 +1,171 @@
+.check-out{
+	.text-price{
+		padding-left:0px;
+		ul{
+			border:none;
+		}
+	}
+	.you-order{
+		border:1px solid #000;
+		display: inline-block;
+		width: 100%;
+	}
+	.link-border-raidus{
+		margin-top:30px; 
+	}
+}
+.account{
+	.col-md-6{
+		&:nth-child(2n+1){
+			padding-left: 0px;
+		}
+		&:nth-child(2n){
+			padding-right{
+				padding-right: 0px;
+			}
+		}
+	}
+	p{
+		font-family: "Lora";
+		font-style: italic;
+		color: $gray-light;
+	}
+}
+
+.cart-review{
+	display:inline-block;
+	width: 100%;
+	table.table{
+		th{
+			&:nth-child(2){
+				width: 30%;
+			}
+			&:nth-child(3){
+				width: 15%;
+			}
+		}
+		td{
+			&:nth-child(2){
+				color: $gray-light;
+			}
+			&:nth-child(3),&:nth-child(5){
+				color: $gray;
+				font-style: normal;
+				font-weight:700;
+				font-size: 18px;
+				font-family: "Montserrat";
+			}
+		}
+	}
+}
+.icon{
+	width:100%;
+	text-align:center;
+	.fa-shopping-basket{
+		font-size: 300px;
+		color: #ddd;
+		position: relative;
+	}
+	.fa-check{
+		position: absolute;
+		right: -33px;
+		bottom: -50px;
+		font-size: 160px;
+		color: #e11111;
+	}
+	h3,h4{
+		text-transform: uppercase;
+		color: $gray;
+		text-align: center;
+		font-weight: 700;
+	}
+	h3{
+		font-size: 30px;
+		margin-top: 80px;
+	}
+	h4{
+		font-size: 18px;
+		margin: 10px 0px;
+	}
+}
+.order-details{
+	.col-md-6{
+		&:nth-of-type(2n+1){
+			padding-right:0px;
+		}
+		&:nth-of-type(2n){
+			padding-left:0px;
+		}
+		h4{
+			font-size: 15px;
+			color: $gray;
+			line-height: 20px;
+			text-transform: capitalize;
+			font-weight: 700;
+			margin-bottom: 15px;
+		}
+		p{
+			font-family: "Lora";
+			font-style: italic;
+			color: $gray-light;
+			margin: 4px 0px;
+			line-height: 20px;
+			b{
+				color: #222;
+			}
+			&.total{
+				text-transform: uppercase;
+				color: $brand-primary;
+				font-style: normal;;
+				font-weight: 700;
+				margin-top: 30px;
+				span{
+					color: $gray;
+				}
+			}
+		}
+	}
+}
+.payment{
+	padding:0 20px;
+	ul.tabs{
+		li{
+			padding: 20px 0px 20px 20px;
+			position: relative;
+			border-bottom:1px solid $gray-lighter;
+			h3{
+				font-size: 15px;
+				color: $gray;
+				margin-bottom: 5px;
+				display: inline-block;
+			}
+			p{
+				color: $gray-light;
+				line-height: 25px;
+				padding:10px 0px;
+			}
+			i{
+				@include size(10px,10px);
+				content: "";
+				border-radius: 50%;
+				border:1px solid $gray-light;
+				position: absolute;
+				left: 0px;
+				top: 22px;
+				background:#fff;
+			}
+			&.active{
+				i{
+					border: 1px solid $gray;
+					background: $gray;
+				}
+			}
+			img{
+				float: right;
+			}
+		}
+	}
+}
+.form-group{
+	margin-bottom:25px !important;
+}
