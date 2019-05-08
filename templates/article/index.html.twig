@@ -63,24 +63,21 @@
                         <div class="logo"><a href="#" title="Dana-Logo"><img src="../assets/images/Dana-menu-logo.png" alt="Dana-Logo"></a></div>
                         <div class="menu-top">
                             <ul class="nav-top">
-                                <li class="level1"><a href="{{ path('home')}}" title="Hopme">Home</a>
+                                <li class="level1"><a href="{{ path('home')}}" title="Home">Home</a>
                                 </li>
-                                <li class="level1"><a href="#" title="Hopme">Shop</a>
+                                <li class="level1"><a href="{{ path('article_index')}}" title="Shop">Shop</a>
 
                                 </li>
-                                <li class="level1 active"><a href="#" title="Blog">Blog</a>
-
-                                </li>
-                                <li class="level1"><a href="#" title="Page">Page</a>
+                                <li class="level1"><a href={{ path('contact')}}" title="Contact">Contact</a>
                                 </li>
                             </ul>
                         </div>
                         <div class="search">
                             <div class="search-form">
-                                <form action="#" method="get">
+                                <form action="#" method="POST">
                                     <!-- End search Select -->
                                     <input type="text" autocomplete="off" placeholder="search Keywork " value="" class="ajax_autosuggest_input ac_input" name="s">
-                                    <button type="submit" class="icon-search">
+                                    <button type="submit" class="icon-search" name="search">
                                         <i class="zmdi zmdi-search"></i>
                                     </button>
                                 </form>
@@ -93,33 +90,16 @@
                     <!-- End container -->
                 </div>
                 <!-- End header-top -->
-                <nav class="menu-mobile">
-                    <ul class="nav">
-                        <li class="level1"><a href="#" title="Headphone">Headphone</a>
-                            
-                        </li>
-                        <li class="level1">
-                            <a href="#" title="Smart watch">Smart watch</a>
-                        </li>
-                        <li class="level1"><a href="#" title="Smart phone ">Smart phone </a></li>
-                        <li class="level1"><a href="#">game consoles</a></li>
-                        <li class="level1"><a href="#" title="Laptop">Laptop</a></li>
-                        <li class="level1"><a href="#" title="televison">televison</a></li>
-                    </ul>
-                </nav>
-                <!-- End menu  mobile -->
+
                 <nav class="mega-menu">
                 <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                   <ul class="nav navbar-nav" id="navbar">
-                    <li class="level1 active"><a href="#" title="Headphone">Headphone</a>
+                    <li class=" active"><a>Nos categories :</2></a>
                         
-                    </li>
-                    
-                    <li class="level1"><a href="#" title="Smart phone ">Smart phone </a></li>
-                    <li class="level1"><a href="#" title="game">game consoles</a></li>
-                    <li class="level1"><a href="#" title="Laptop">Laptop</a></li>
-                    <li class="level1"><a href="#" title="televison">televison</a></li>
+                    {% for categorie in categories %}
+                    <li class="level1"><a href="{{ path('catfiltre',{id: categorie.id }) }}" title="{{ categorie.nom }}" id="categorie">{{ categorie.nom }}</a></li>
+                    {% endfor %} 
                   </ul>
                   <div class="menu-icon-right">
                     <div class="cart dropdown">
@@ -143,9 +123,8 @@
                             
                         {% endfor %}                             
                         </ul>
-                        <p class="total"><span>Total cost</span> $1121.98</p>
-                        <a class="checkout" href="#" title="view cart">view cart</a>
-                        <a class="checkout bg-black" href="#" title="check out">Check out</a>
+                        <p class="total"><span>Total</span> $1121.98</p>
+                        <a class="checkout bg-black" href="#" title="check out">Mon panier</a>
                     </div>
                 </div>
                   </div>

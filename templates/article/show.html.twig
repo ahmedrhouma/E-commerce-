@@ -9,10 +9,10 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-        <link rel="shortcut icon" href="../../assets/images/favicon.png"/>
-        <link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.css"/>
-        <link rel="stylesheet" type="text/css" href="../../assets/css/style.css"/>
-        <link rel="stylesheet" type="text/css" href="../../assets/vendor/owl-slider.css"/>
+        <link rel="shortcut icon" href="../../../assets/images/favicon.png"/>
+        <link rel="stylesheet" type="text/css" href="../../../assets/css/bootstrap.css"/>
+        <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="../../../assets/vendor/owl-slider.css"/>
         <title>Product Details</title>
     </head>
      <body>
@@ -58,18 +58,15 @@
                     <div class="container">
                     <div class="inner-container">
                         <p class="icon-menu-mobile"><span class="icon-bar"></span></p>
-                        <div class="logo"><a href="#" title="Dana-Logo"><img src="../../assets/images/Dana-menu-logo.png" alt="Dana-Logo"></a></div>
+                        <div class="logo"><a href="#" title="Dana-Logo"><img src="../../../assets/images/Dana-menu-logo.png" alt="Dana-Logo"></a></div>
                         <div class="menu-top">
                             <ul class="nav-top">
-                                <li class="level1"><a href="#" title="Hopme">Home</a>
+                                <li class="level1"><a href="{{path('home')}}" title="Hopme">Home</a>
                                 </li>
-                                <li class="level1"><a href="#" title="Hopme">Shop</a>
+                                <li class="level1"><a href="{{path('article_index')}}" title="Hopme">Shop</a>
 
                                 </li>
-                                <li class="level1 active"><a href="#" title="Blog">Blog</a>
-
-                                </li>
-                                <li class="level1"><a href="#" title="Page">Page</a>
+                                <li class="level1"><a href="{{ path('contact')}}" title="Page">Contact</a>
                                 </li>
                             </ul>
                         </div>
@@ -90,34 +87,13 @@
                     </div>
                     <!-- End container -->
                 </div>
-                <!-- End header-top -->
-                <nav class="menu-mobile">
-                    <ul class="nav">
-                        <li class="level1"><a href="#" title="Headphone">Headphone</a>
-                            
-                        </li>
-                        <li class="level1">
-                            <a href="#" title="Smart watch">Smart watch</a>
-                        </li>
-                        <li class="level1"><a href="#" title="Smart phone ">Smart phone </a></li>
-                        <li class="level1"><a href="#">game consoles</a></li>
-                        <li class="level1"><a href="#" title="Laptop">Laptop</a></li>
-                        <li class="level1"><a href="#" title="televison">televison</a></li>
-                    </ul>
-                </nav>
+
                 <!-- End menu  mobile -->
                 <nav class="mega-menu">
                 <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                   <ul class="nav navbar-nav" id="navbar">
-                    <li class="level1 active"><a href="#" title="Headphone">Headphone</a>
-                        
-                    </li>
-                    
-                    <li class="level1"><a href="#" title="Smart phone ">Smart phone </a></li>
-                    <li class="level1"><a href="#" title="game">game consoles</a></li>
-                    <li class="level1"><a href="#" title="Laptop">Laptop</a></li>
-                    <li class="level1"><a href="#" title="televison">televison</a></li>
+
                   </ul>
                   <div class="menu-icon-right">
                     <div class="cart dropdown">
@@ -142,7 +118,6 @@
                         {% endfor %}                             
                         </ul>
                         <p class="total"><span>Total cost</span> $1121.98</p>
-                        <a class="checkout" href="#" title="view cart">view cart</a>
                         <a class="checkout bg-black" href="#" title="check out">Check out</a>
                     </div>
                 </div>
@@ -167,7 +142,7 @@
                         <div class="col-md-6 col-sm-6">
                             <div class="product-img-box">
                             <a id="image-view" title="Product Image">
-                              <img id="image" src="../../uploads/{{ article.image }}" alt="Product"/>
+                              <img id="image" src="../../../uploads/{{ article.image }}" alt="Product"/>
                             </a>
                               </div>
                               <!-- End product-img-box -->
@@ -185,7 +160,6 @@
                         <div class="product-box-content">
                             <div class="product-name">
                                 <h1>{{ article.nom }}</h1>
-                                <p class="cat">Women Crochet</p>
                             </div>
                             <!-- End product-name -->
                             <div class="rating">
@@ -209,16 +183,13 @@
                                 <p class="price">{{ article.prix }} DT</p>
                             </div>
                             <!-- End Price -->
+                            <p>description :</p>
                             <p class="description">{{ article.description }}</p>
                             <div class="options">
-                                <p>Size</p>
+                                
                                 <ul class="size">
-                                    <li><a href="#">xs</a></li>
-                                    <li><a href="#" >s</a></li>
-                                    <li><a href="#" >m</a></li>
-                                    <li><a href="#" >l</a></li>
-                                    <li><a href="#">xl</a></li>
-                                    <li><a href="#">xxl</a></li>
+                                    <li></li>
+                                   
                                 </ul>
                                 <p>Color</p>
                                 <ul class="color">
@@ -233,8 +204,10 @@
                                     <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" max="100" min="1" step="1">
                                 </div>
                                 <!-- End quanity -->
-                                <a title="link" href="#" class="link-v2"><span>Buy now</span><i class="zmdi zmdi-shopping-cart-plus"></i></a>
-                                <a title="link" href="#" class="link-v2 link-v2-bg"><span>Wishlist</span><i class="zmdi zmdi-favorite-outline"></i></a>
+                                <form method="post">
+                                <button class="link-v2" name="ajout"><span style="color: black">ajouter </span><i class="zmdi zmdi-shopping-cart-plus"></i></button>
+                                </form>
+                               
                             </div>
                             <!-- End Options -->
                             </div>
@@ -242,190 +215,22 @@
                         </div>  
                         <!-- End col-md-6 -->
                     </div>   
-                    <!-- End product-details-content -->
-                    <div class="hoz-tab-container space-padding-tb-40">
-                        <ul class="tabs">
-                            <li class="item" rel="overview">Overview</li>
-                            <li class="item" rel="specification">Specification</li>
-                            <li class="item" rel="reviews">Reviews</li>
-                        </ul>
-                        <div class="tab-container">
-                            <div id="overview" class="tab-content">
-                                <h2>About This Product</h2>
-                                <p><b>The Next Big Thing Is Here</b> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-                                unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic
-                                typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.</p>
-                                <div class="panel-body">
-                                    <div class="media images col-md-6">
-                                        <div class="pull-right">
-                                           <img src="../../assets/images/product-details-tab-1.jpg" class="media-object img-circle" alt="images">
-                                        </div>
-                                        <div class="media-body">
-                                            <h4 class="media-heading">Circular Interface</h4>
-                                            <p>A revolutionary design keeps everything you need at your fingertips. The circular interface and unique rotating bezel let you navigate through notifications, apps and widgets quickly without covering the display.</p>
-                                            <!-- Nested media object -->
-                                        </div>
-                                    </div>
-                                    <div class="media images col-md-6">
-                                        <div class="pull-right">
-                                            <img src="../../assets/images/product-details-tab-1.jpg" class="media-object img-circle" alt="images">
-                                        </div>
-                                        <div class="media-body">
-                                            <h4 class="media-heading">3G or 4G2 Network Connectivity</h4>
-                                            <p>A revolutionary design keeps everything you need at your fingertips. The circular interface and unique rotating bezel let you navigate through notifications, apps and widgets quickly without covering the display.</p>
-                                        </div>
-                                    </div>
-                                    <div class="media images col-md-12">
-                                        <div class="pull-right">
-                                            <img src="../../assets/images/product-details-tab-1.jpg" class="media-object img-circle" alt="images">
-                                        </div>
-                                        <div class="media-body">
-                                            <h4 class="media-heading">Circular Interface</h4>
-                                            <p>A revolutionary design keeps everything you need at your fingertips. The circular interface and unique rotating bezel let you navigate through notifications, apps and widgets quickly without covering the display.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="specification" class="tab-content">
-                                <table class="table">
-                                    <tr>
-                                        <td>Category</td>
-                                        <td><b>Gear S2 3G/4G</b></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Carrier</td>
-                                        <td><b>AT&T</b></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Form Factor</td>
-                                        <td>Wearable Tech</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Color</td>
-                                        <td><b>Dark Gray</b></td>
-                                    </tr>
-                                    <tr>
-                                        <td>OS</td>
-                                        <td><b>Tizen based wearable platform</b></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Size</td>
-                                        <td><b>51g</b></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Battery</td>
-                                        <td><b>BATTERY TYPE AND SIZE</b></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Battery</td>
-                                        <td><b>INTERNAL MEMORY </b></td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <div id="reviews" class="tab-content">
-                                <div class="col-md-6">
-                                    <div class="coment-container">
-                                                <div class="panel-body">
-                                                    <ul class="media-list">
-                                                        <li class="media">
-                                                            <a class="pull-left" href="#">
-                                                               <img class="media-object img-circle" src="../../assets/images/avatar1.jpg" alt="images">
-                                                            </a>
-                                                            <div class="media-body">
-                                                                <p class="date">April 9, 2016</p>
-                                                                <h4 class="media-heading">jennifer lopez</h4>
-                                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
-                                                                <p class="tags">
-                                                                    <a href="#" title="like"><i class="zmdi zmdi-favorite-outline"></i>3</a>
-                                                                    <a href="#" title="reply"><i class="zmdi zmdi-mail-reply"></i>3</a>
-                                                                </p>
-                                                                <!-- Nested media object -->
-                                                                <div class="media">
-                                                                    <a class="pull-left" href="#">
-                                                                        <img class="media-object img-circle" src="../../assets/images/avatar2.jpg" alt="images">
-                                                                    </a>
-                                                                    <div class="media-body">
-                                                                        <p class="date">April 9, 2016</p>
-                                                                        <h4 class="media-heading">jennifer lopez</h4>
-                                                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
-                                                                        <p class="tags">
-                                                                            <a href="#" title="like"><i class="zmdi zmdi-favorite-outline"></i>3</a>
-                                                                            <a href="#" title="reply"><i class="zmdi zmdi-mail-reply"></i>3</a>
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="media">
-                                                            <a class="pull-left" href="#">
-                                                                <img class="media-object img-circle" src="../../assets/images/avatar3.jpg" alt="images">
-                                                            </a>
-                                                            <div class="media-body">
-                                                                <p class="date">April 9, 2016</p>
-                                                                <h4 class="media-heading">jennifer lopez</h4>
-                                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
-                                                                <p class="tags">
-                                                                    <a href="#" title="like"><i class="zmdi zmdi-favorite-outline"></i>3</a>
-                                                                    <a href="#" title="reply"><i class="zmdi zmdi-mail-reply"></i>3</a>
-                                                                </p>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                    </div>
-                                    <!-- End comment -->
-                                </div>
-                                <div class="col-md-6">
-                                        <div class="title-ver2">
-                                            <h3>Add your review</h3>
-                                        </div>
-                                        <p class="vote">Vote:</p>
-                                        <div class="icon-rating">
-                                            <input type="radio" id="bird-horizontal-rating-1" name="bird-horizontal-rating" checked="">   
-                                            <label for="bird-horizontal-rating-1"><i class="fa fa-star"></i></label>
-                                            <input type="radio" id="bird-horizontal-rating-2" name="bird-horizontal-rating" checked="">
-                                            <label for="bird-horizontal-rating-2"><i class="fa fa-star"></i></label>
-                                            <input type="radio" id="bird-horizontal-rating-3" name="bird-horizontal-rating">    
-                                            <label for="bird-horizontal-rating-3"><i class="fa fa-star"></i></label>
-                                            <input type="radio" id="bird-horizontal-rating-4" name="bird-horizontal-rating">    
-                                            <label for="bird-horizontal-rating-4"><i class="fa fa-star"></i></label>
-                                            <input type="radio" id="bird-horizontal-rating-5" name="bird-horizontal-rating">   
-                                            <label for="bird-horizontal-rating-5"><i class="fa fa-star"></i></label>
-                                        </div>
-                                        <form class="form-horizontal">
-                                            <div class="form-group">
-                                                <label class=" control-label" for="inputName">Nick Name*</label>
-                                                <input type="text" class="form-control" id="inputName" placeholder="Name">
-                                            </div>
-                                            <div class="form-group">
-                                                <label class=" control-label" for="inputsumary">Summary of Your Review *</label>
-                                                <input type="text" class="form-control" id="inputsumary" placeholder="Email">
-                                            </div>
-                                            <div class="form-group">
-                                                <label class=" control-label" for="inputReview">Review*</label>
-                                                <input type="text" class="form-control" id="inputReview" placeholder="Review*">
-                                            </div>
-                                            <button class="btn link-button link-button-v2" type="submit">Submit</button>
-                                        </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                     <!-- tab-container -->
                     <div class="title-text">
                         <h3><span>R</span>elated products</h3>    
                     </div> 
                     <!-- End title -->
                     <div class="upsell-product products">
+                    {% for article in articles %}
                         <div class="item-inner">
                                 <div class="product">
-                                    <p class="product-title">Apple watch sport green</p>
-                                    <p class="product-price"><span>price: </span>$ 650.99</p>
+                                    <p class="product-title">{{article.nom}}</p>
+                                    <p class="product-price"><span>price: </span>{{article.prix}}</p>
                                     <a class="product-images" href="#" title="">
-                                        <img class="primary_image" src="../../assets/images/products/1.jpg" alt="images"/>
-                                        <img class="secondary_image" src="../../assets/images/products/1.jpg" alt="images"/>
+                                        <img class="primary_image" src="../../../uploads/{{article.image}}" alt="images"/>
                                     </a>
-                                    <p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                                    <p class="description">{{article.description}}</p>
                                     <div class="action">
                                         <a class="refresh" href="#"><i class="zmdi zmdi-refresh-sync"></i></a>
                                         <a href="#" title="Like"><i class="zmdi zmdi-favorite-outline"></i></a>
@@ -433,323 +238,16 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="item-inner">
-                                <div class="product">
-                                    <p class="product-title">Apple watch sport green</p>
-                                    <p class="product-price"><span>price: </span>$ 650.99</p>
-                                    <a class="product-images" href="#" title="">
-                                        <img class="primary_image" src="../../assets/images/products/1.jpg" alt="images"/>
-                                        <img class="secondary_image" src="../../assets/images/products/1.jpg" alt="images"/>
-                                    </a>
-                                    <p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-                                    <div class="action">
-                                        <a class="refresh" href="#"><i class="zmdi zmdi-refresh-sync"></i></a>
-                                        <a href="#" title="Like"><i class="zmdi zmdi-favorite-outline"></i></a>
-                                        <a href="#" title="add-to-cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item-inner">
-                                <div class="product sale">
-                                    <p class="product-title">Apple watch sport green</p>
-                                    <div class="product-price">
-                                        <span>price: </span><span class="price">$ 650.99</span>
-                                        <span class="price-old">$ 670.99</span>
-                                    </div>
-                                    <a class="product-images" href="#" title="">
-                                        <img class="primary_image" src="../../assets/images/products/1.jpg" alt="images"/>
-                                        <img class="secondary_image" src="../../assets/images/products/1.jpg" alt="images"/>
-                                    </a>
-                                    <p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-                                    <div class="action">
-                                        <a class="refresh" href="#"><i class="zmdi zmdi-refresh-sync"></i></a>
-                                        <a href="#" title="Like"><i class="zmdi zmdi-favorite-outline"></i></a>
-                                        <a href="#" title="add-to-cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item-inner">
-                                <div class="product ">
-                                    <span class="new lable">New</span>
-                                    <p class="product-title">Apple watch sport green</p>
-                                    <p class="product-price"><span>price: </span>$ 650.99</p>
-                                    <a class="product-images" href="#" title="">
-                                        <img class="primary_image" src="../../assets/images/products/1.jpg" alt="images"/>
-                                        <img class="secondary_image" src="../../assets/images/products/1.jpg" alt="images"/>
-                                    </a>
-                                    <p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-                                    <div class="action">
-                                        <a class="refresh" href="#"><i class="zmdi zmdi-refresh-sync"></i></a>
-                                        <a href="#" title="Like"><i class="zmdi zmdi-favorite-outline"></i></a>
-                                        <a href="#" title="add-to-cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
-                                    </div>
-                                </div>
-                            </div>
+                            {% endfor %}      
                     </div>
                 </div>
                 <!-- End container --> 
           </div>
-          <!-- End MainContent -->
-          <div class="bottom-product-footer space-padding-tb-50 wow fadeInUp">
-            <div class="container">
-                <div class="col-md-4">
-                    <div class="title-text size-25">
-                        <h3><span>F</span>eature product</h3>
-                    </div>
-                    <div class="product">
-                        <a class="product-images" href="#" title="">
-                            <img class="primary_image" src="../../assets/images/products/1.jpg" alt=""/>
-                        </a>
-                        <div class="product-content">
-                            <a class="category" href="#" title="category">watch</a>    
-                            <a class="product-name" href="#" title="Mens Hugo Boss Chronograph Watch">Mens Hugo Boss Chronograph Watch</a>
-                            <p class="product-price"><span>Price: </span>$60.99</p>
-                            <div class="action">
-                                <a class="refresh" href="#"><i class="zmdi zmdi-refresh-sync"></i></a>
-                                <a href="#" title="Like"><i class="zmdi zmdi-favorite-outline"></i></a>
-                                <a href="#" title="add-to-cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
-                            </div>
-                        </div>
-                        <!-- End product content -->
-                    </div>
-                    <!-- end produt item -->
-                    <div class="product">
-                        <a class="product-images" href="#" title="">
-                            <img class="primary_image" src="../../assets/images/products/1.jpg" alt=""/>
-                        </a>
-                        <div class="product-content">
-                            <a class="category" href="#" title="category">watch</a>    
-                            <a class="product-name" href="#" title="Mens Hugo Boss Chronograph Watch">BOSS HUGO BOSS Quartz Aviator Chronograph Watch</a>
-                            <p class="product-price"><span>Price: </span>$60.99</p>
-                            <div class="action">
-                                <a class="refresh" href="#"><i class="zmdi zmdi-refresh-sync"></i></a>
-                                <a href="#" title="Like"><i class="zmdi zmdi-favorite-outline"></i></a>
-                                <a href="#" title="add-to-cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
-                            </div>
-                        </div>
-                        <!-- End product content -->
-                    </div>
-                    <!-- end produt item -->
-                    <div class="product">
-                        <a class="product-images" href="#" title="">
-                            <img class="primary_image" src="../../assets/images/products/1.jpg" alt=""/>
-                        </a>
-                        <div class="product-content">
-                            <a class="category" href="#" title="category">watch</a>    
-                            <a class="product-name" href="#" title="Mens Hugo Boss Chronograph Watch">Tory Burch Watches 37mm Tory Stainless </a>
-                            <p class="product-price"><span>Price: </span>$60.99</p>
-                            <div class="action">
-                                <a class="refresh" href="#"><i class="zmdi zmdi-refresh-sync"></i></a>
-                                <a href="#" title="Like"><i class="zmdi zmdi-favorite-outline"></i></a>
-                                <a href="#" title="add-to-cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
-                            </div>
-                        </div>
-                        <!-- End product content -->
-                    </div>
-                    <!-- end produt item -->
-                </div>
-                <!-- End col-md-4 -->
-                <div class="col-md-4">
-                    <div class="title-text size-25">
-                        <h3><span>T</span>op Review</h3>
-                    </div>
-                    <div class="product">
-                        <a class="product-images" href="#" title="">
-                            <img class="primary_image" src="../../assets/images/products/1.jpg" alt=""/>
-                        </a>
-                        <div class="product-content">
-                            <a class="category" href="#" title="category">watch</a>    
-                            <a class="product-name" href="#" title="Mens Hugo Boss Chronograph Watch">HP ENVY Curved All-in-One PC</a>
-                            <p class="product-price"><span>Price: </span>$60.99</p>
-                            <p class="star">
-                                <a href="#" title="star"><i class="fa fa-star"></i></a>
-                                <a href="#" title="star"><i class="fa fa-star"></i></a>
-                                <a href="#" title="star"><i class="fa fa-star"></i></a>
-                                <a href="#" title="star"><i class="fa fa-star"></i></a>
-                                <a href="#" title="star"><i class="fa fa-star-o"></i></a>
-                            </p>
-                            <div class="action">
-                                <a class="refresh" href="#"><i class="zmdi zmdi-refresh-sync"></i></a>
-                                <a href="#" title="Like"><i class="zmdi zmdi-favorite-outline"></i></a>
-                                <a href="#" title="add-to-cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
-                            </div>
-                        </div>
-                        <!-- End product content -->
-                    </div>
-                    <!-- end produt item -->
-                    <div class="product">
-                        <a class="product-images" href="#" title="">
-                            <img class="primary_image" src="../../assets/images/products/1.jpg" alt=""/>
-                        </a>
-                        <div class="product-content">
-                            <a class="category" href="#" title="category">watch</a>    
-                            <a class="product-name" href="#" title="Mens Hugo Boss Chronograph Watch">skullcandy headphones grind</a>
-                            <p class="product-price"><span>Price: </span>$60.99</p>
-                            <p class="star">
-                                <a href="#" title="star"><i class="fa fa-star"></i></a>
-                                <a href="#" title="star"><i class="fa fa-star"></i></a>
-                                <a href="#" title="star"><i class="fa fa-star"></i></a>
-                                <a href="#" title="star"><i class="fa fa-star"></i></a>
-                                <a href="#" title="star"><i class="fa fa-star-o"></i></a>
-                            </p>
-                            <div class="action">
-                                <a class="refresh" href="#"><i class="zmdi zmdi-refresh-sync"></i></a>
-                                <a href="#" title="Like"><i class="zmdi zmdi-favorite-outline"></i></a>
-                                <a href="#" title="add-to-cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
-                            </div>
-                        </div>
-                        <!-- End product content -->
-                    </div>
-                    <!-- end produt item -->
-                    <div class="product">
-                        <a class="product-images" href="#" title="">
-                            <img class="primary_image" src="../../assets/images/products/1.jpg" alt=""/>
-                        </a>
-                        <div class="product-content">
-                            <a class="category" href="#" title="category">watch</a>    
-                            <a class="product-name" href="#" title="Mens Hugo Boss Chronograph Watch">Inspire 1 Pro White Edition</a>
-                            <p class="product-price"><span>Price: </span>$60.99</p>
-                            <p class="star">
-                                <a href="#" title="star"><i class="fa fa-star"></i></a>
-                                <a href="#" title="star"><i class="fa fa-star"></i></a>
-                                <a href="#" title="star"><i class="fa fa-star"></i></a>
-                                <a href="#" title="star"><i class="fa fa-star"></i></a>
-                                <a href="#" title="star"><i class="fa fa-star-o"></i></a>
-                            </p>
-                            <div class="action">
-                                <a class="refresh" href="#"><i class="zmdi zmdi-refresh-sync"></i></a>
-                                <a href="#" title="Like"><i class="zmdi zmdi-favorite-outline"></i></a>
-                                <a href="#" title="add-to-cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
-                            </div>
-                        </div>
-                        <!-- End product content -->
-                    </div>
-                    <!-- end produt item -->
-                </div>
-                <!-- End col-md-4 -->
-                <div class="col-md-4">
-                    <div class="title-text size-25">
-                        <h3><span>P</span>opular</h3>
-                    </div>
-                    <div class="product">
-                        <a class="product-images" href="#" title="">
-                            <img class="primary_image" src="../../assets/images/products/1.jpg" alt=""/>
-                        </a>
-                        <div class="product-content">
-                            <a class="category" href="#" title="category">watch</a>    
-                            <a class="product-name" href="#" title="Mens Hugo Boss Chronograph Watch">Canon EOS 1200D</a>
-                            <p class="product-price"><span>Price: </span>$60.99</p>
-                            <div class="action">
-                                <a class="refresh" href="#"><i class="zmdi zmdi-refresh-sync"></i></a>
-                                <a href="#" title="Like"><i class="zmdi zmdi-favorite-outline"></i></a>
-                                <a href="#" title="add-to-cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
-                            </div>
-                        </div>
-                        <!-- End product content -->
-                    </div>
-                    <!-- end produt item -->
-                    <div class="product">
-                        <a class="product-images" href="#" title="">
-                            <img class="primary_image" src="../../assets/images/products/1.jpg" alt=""/>
-                        </a>
-                        <div class="product-content">
-                            <a class="category" href="#" title="category">watch</a>    
-                            <a class="product-name" href="#" title="Mens Hugo Boss Chronograph Watch">Skullcandy shakedown x5shfz 820</a>
-                            <p class="product-price"><span>Price: </span>$60.99</p>
-                            <div class="action">
-                                <a class="refresh" href="#"><i class="zmdi zmdi-refresh-sync"></i></a>
-                                <a href="#" title="Like"><i class="zmdi zmdi-favorite-outline"></i></a>
-                                <a href="#" title="add-to-cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
-                            </div>
-                        </div>
-                        <!-- End product content -->
-                    </div>
-                    <!-- end produt item -->
-                    <div class="product">
-                        <a class="product-images" href="#" title="">
-                            <img class="primary_image" src="../../assets/images/products/1.jpg" alt=""/>
-                        </a>
-                        <div class="product-content">
-                            <a class="category" href="#" title="category">watch</a>    
-                            <a class="product-name" href="#" title="Mens Hugo Boss Chronograph Watch">Philips spa 60 2.0 speaker with usb plug</a>
-                            <p class="product-price"><span>Price: </span>$60.99</p>
-                            <div class="action">
-                                <a class="refresh" href="#"><i class="zmdi zmdi-refresh-sync"></i></a>
-                                <a href="#" title="Like"><i class="zmdi zmdi-favorite-outline"></i></a>
-                                <a href="#" title="add-to-cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
-                            </div>
-                        </div>
-                        <!-- End product content -->
-                    </div>
-                    <!-- end produt item -->
-                </div>
-                <!-- End col-md-4 -->
-                </div>
-                <!-- End conntainer -->
-          </div>
-          <!-- End product-footer -->
-          <div class="brand-container space-50">
-            <div class="container">
-                <div class="slider-brand">
-                    <div class="item">
-                        <a href="#" title="Brand">
-                            <img src="../../assets/images/Dama-brand1.jpg" alt="Brand">
-                        </a>
-                    </div>
-                    <!-- End item -->
-                    <div class="item">
-                        <a href="#" title="Brand">
-                            <img src="../../assets/images/Dama-brand1.jpg" alt="Brand">
-                        </a>
-                    </div>
-                    <!-- End item -->
-                    <div class="item">
-                        <a href="#" title="Brand">
-                            <img src="../../assets/images/Dama-brand1.jpg" alt="Brand">
-                        </a>
-                    </div>
-                    <!-- End item -->
-                    <div class="item">
-                        <a href="#" title="Brand">
-                            <img src="../../assets/images/Dama-brand1.jpg" alt="Brand">
-                        </a>
-                    </div>
-                    <!-- End item -->
-                    <div class="item">
-                        <a href="#" title="Brand">
-                            <img src="../../assets/images/Dama-brand1.jpg" alt="Brand">
-                        </a>
-                    </div>
-                    <!-- End item -->
-                    <div class="item">
-                        <a href="#" title="Brand">
-                            <img src="../../assets/images/Dama-brand1.jpg" alt="Brand">
-                        </a>
-                    </div>
-                    <!-- End item -->
-                </div>
-                <!-- End brand slider -->
-            </div>
-            <!-- End Container -->
-          </div>
-          <!-- End Brand Container -->
-          <div class="newsletter">
-              <div class="container">
-                <h3><a href="#" title="sign up">sign up</a> to newsletter</h3>
-                <p>and receilve $20 coupon for first shopping</p>
-                    <form action="#" method="get" accept-charset="utf-8">
-                        <input type="text" onblur="if (this.value == '') {this.value = 'Enter your email';}" onfocus="if(this.value != '') {this.value = '';}" value="Enter your emaill" class="input-text required-entry validate-email" title="Sign up for our newsletter" id="newsletter" name="email">
-                        <button class="button button1" title="Subscribe" type="submit"></button>
-                    </form>
-              </div>
-              <!-- End container -->
-          </div>
-          <!-- End newsletter -->
           <footer id="footer">
               <div class="container">
                 <div class="row footer-top">
                     <div class="col-md-5">
-                        <a class="logo" href="#" title="logo"><img src="../../assets/images/Dana-menu-logo.png" alt="Logo"></a>
+                        <a class="logo" href="#" title="logo"><img src="../../../assets/images/Dana-menu-logo.png" alt="Logo"></a>
                         <p class="italic">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p>
                         <div class="infomation">
                             <p><i class="zmdi zmdi-pin"></i>PO Box CT16122 Collins Street West, Victoria 8007, Australia.</p>
@@ -798,50 +296,19 @@
                          <a href="#" title="twitter"><i class="zmdi zmdi-twitter"></i></a>
                     </div>
                     <div class="col-md-4">
-                        <a href="#" title="Payment"><img src="../../assets/images/Hermes-footer-payment.png" alt="payment"></a>
+                        <a href="#" title="Payment"><img src="../../../assets/images/Hermes-footer-payment.png" alt="payment"></a>
                     </div>
                 </div>
               </div>
               <!-- End container -->
           </footer>
-        <script type="text/javascript" src="../../assets/js/jquery-1.11.1.min.js"></script>
-        <script type="text/javascript" src="../../assets/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="../../assets/js/owl.carousel.min.js"></script>
-        <script type="text/javascript" src="../../assets/js/jquery.elevatezoom.js"></script>
-        <script type="text/javascript" src="../../assets/js/store.js"></script>
+        <script type="text/javascript" src="../../../assets/js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="../../../assets/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../../assets/js/owl.carousel.min.js"></script>
+        <script type="text/javascript" src="../../../assets/js/jquery.elevatezoom.js"></script>
+        <script type="text/javascript" src="../../../assets/js/store.js"></script>
     </body>
 </html>
 
 
-    <h1>Article</h1>
-
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ article.id }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ article.description }}</td>
-            </tr>
-            <tr>
-                <th>Nom</th>
-                <td>{{ article.nom }}</td>
-            </tr>
-            <tr>
-                <th>Prix</th>
-                <td>{{ article.prix }}</td>
-            </tr>
-        </tbody>
-    </table>
-<form method="post">
-        <button name="ajout">acheter</button>
-
-</form>
-    <a href="{{ path('article_index') }}">back to list</a>
-
-    <a href="{{ path('article_edit', {'id': article.id}) }}">edit</a>
-
-    {{ include('article/_delete_form.html.twig') }}
 {% endblock %}

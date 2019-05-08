@@ -1,9 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Panier index{% endblock %}
+{% block title %}Article index{% endblock %}
 
 {% block body %}
-
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -11,11 +12,13 @@
         <link rel="shortcut icon" href="../../assets/images/favicon.png"/>
         <link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.css"/>
         <link rel="stylesheet" type="text/css" href="../../assets/css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="../../assets/vendor/range-price.css"/>
         <link rel="stylesheet" type="text/css" href="../../assets/vendor/owl-slider.css"/>
-        <title>Shopping Cart</title>
+        <title>Shop Listing 1</title>
     </head>
     <body>
- <header id="header" class="header-v3">
+        
+        <header id="header" class="header-v3">
             <div id="topbar">
                 <div class="container">
                     <div class="topbar-left">
@@ -60,7 +63,7 @@
                         <div class="logo"><a href="#" title="Dana-Logo"><img src="../../assets/images/Dana-menu-logo.png" alt="Dana-Logo"></a></div>
                         <div class="menu-top">
                             <ul class="nav-top">
-                                <li class="level1"><a href="{{ path('home')}}" title="Home">Home</a>
+                                <li class="level1"><a href="{{ path('home')}}" title="home">Home</a>
                                 </li>
                                 <li class="level1"><a href="{{ path('article_index')}}" title="Shop">Shop</a>
 
@@ -71,10 +74,10 @@
                         </div>
                         <div class="search">
                             <div class="search-form">
-                                <form action="#" method="POST">
+                                <form action="#" method="get">
                                     <!-- End search Select -->
                                     <input type="text" autocomplete="off" placeholder="search Keywork " value="" class="ajax_autosuggest_input ac_input" name="s">
-                                    <button type="submit" class="icon-search" name="search">
+                                    <button type="submit" class="icon-search">
                                         <i class="zmdi zmdi-search"></i>
                                     </button>
                                 </form>
@@ -106,8 +109,7 @@
                     </a>
                     <div class="cart-list dropdown-menu">
                         <ul class="list">
-                            {% set sum = 0 %} 
-                            {% for panier in paniers %}
+                             {% for panier in paniers %}
                                     
                             <li>
                                {% for panier in panier.Article %}
@@ -116,17 +118,13 @@
                                     <p class="product-name">{{ panier.nom }}</p>
                                     <p class="product-price">{{ panier.prix }}</p>
                                 </div>
-                                {% set sum = sum + panier.prix  %} 
-
                                 {% endfor %}
-
                             </li> 
                             
-                        {% endfor %}    
-
+                        {% endfor %}                             
                         </ul>
-                        <p class="total"><span>Total</span>{{ sum }} </p>
-                        <a class="checkout bg-black" href="{{ path('panier_index')}}" title="check out">Mon panier</a>
+                        <p class="total"><span>Total</span> $1121.98</p>
+                        <a class="checkout bg-black" href="#" title="check out">Mon panier</a>
                     </div>
                 </div>
                   </div>
@@ -138,78 +136,70 @@
         <div class="breadcrumb">
             <div class="container">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li class="active">Shopping Cart</li>
+                    
                 </ul>
             </div>
             <!-- End container -->
-        </div> 
-          <div class="main-content shopping-cart"> 
-          <div class="shopping-cart">
-          <div class="container">    
-                <div class="title-ver2">
-                    <h3>Shopping Cart</h3>
-                </div>
-                <!-- End title product -->
-                <table class="table space-80">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>article</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for panier in paniers %}
-            <tr>
-
-                <td>{{ panier.id }}</td>
-
-                {% for panier in panier.Article %}
-                    <td class="product-photo"><img src="../../uploads/{{ panier.image }} " alt="Futurelife" height="100" width="100"></td>
-                 <td>{{ panier.nom }}</td>
-                 <td class="product-price">{{ panier.prix }}</td>
-                 {% endfor %}
-                 <td>
-                 {{ include('panier/_delete_form.html.twig') }}
-             </td>
-
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="2">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-                </table>
+        </div>  
+          
+                    <script type="text/javascript">
+                        var trigger = $('.discount_selector');
+                        var list = $('.discount-list');
+                        var list_li = $('.discount-list li');
+                        trigger.click(function() {
+                            trigger.toggleClass('active');
+                            list.slideToggle(200);
+                        });
+                        // this is optional to close the list while the new page is loading
+                        list_li.click(function() {
+                            trigger.click();
+                            trigger.text($(this).text());
+                        });
+                    </script>  
+                </aside>
             </div>
-            <!-- End container -->
-        </div>
-        <!-- End shopping cart -->
-            
-        <div class="shipping-total">
-            <div class="container">
+            <!-- End Secondary -->
+            <div id="primary" class="col-xs-12 col-md-9">     
+                    <!-- End Banner Grid -->
+                    
+                    <!-- End ordering -->
+                    <div class="products grid_full grid_sidebar">
+                         {% for article in articles %}
+                            <div class="item-inner">
+                                <div class="product">
+                                   
+                                    <p class="product-title">{{ article.nom }}</p>
+                                    <p class="product-price"><span>price: </span>{{ article.prix }} DT</p>
+                                    <a class="product-images" href="#" title="">
+                                        <img class="primary_image" src="../../uploads/{{ article.image }}" alt="images"/>
+                                        <img class="secondary_image" src="../../uploads/{{ article.image }}" alt="images"/>
 
-                <div class="col-md-8 cart-totals text-price">
-                    <div class="title-ver2">
-                        <h3>Cart totals</h3>
+                                    </a>
+                                    <p class="description">
+                                    {{ article.description }}</p>
+                                    <div class="action">
+                                        {% if is_granted('ROLE_ADMIN') %}
+                                        <a class="refresh" href="{{ path('article_edit', {'id': article.id}) }}" title="edit"><i class="zmdi zmdi-refresh-sync"></i></a>
+                                        {% endif %}
+                                        <a href="{{ path('article_show', {'id': article.id}) }}" title="afficher"><i class="zmdi zmdi-favorite-outline" ></i></a>
+                                        <a href="#" title="ajouter"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
+                                    </div>
+                                
+                                </div>
+                            </div>
+                            {% endfor %}
                     </div>
-                    <ul>
-                        <li><span class="text">totale HT</span><span class="number">{{ sum }} TND</span></li>
-                        <li><span class="text">transport</span><span class="number"> 50.00 TND</span></li>
-                        <li><span class="text totals">Totals</span><span class="number totals">
-                            {{ sum+50 }} TND</span></li>
-                    </ul>
-                    <a class="btn link-button link-border-raidus" href="#" title="Proceed to checkout">Commander</a>
-                </div>
-                <!-- End col-md-6 -->
+                    <!-- End product-content products  -->
+                    
+
+                    <!-- End pagination-container -->
             </div>
-            <!-- End shipping-total -->
-            </div>           
-            <!-- End conainer -->
-          </div>
-          <!-- End MainContent -->
+            <!-- End Primary -->
+            
+
+          <!-- End product-footer -->
+          
+          <!-- End Brand Container -->
           <div class="newsletter">
               <div class="container">
                 <h3><a href="#" title="sign up">sign up</a> to newsletter</h3>
@@ -226,7 +216,7 @@
               <div class="container">
                 <div class="row footer-top">
                     <div class="col-md-5">
-                        <a class="logo" href="#" title="logo"><img src="../../assets/images/Dana-menu-logo.png" alt="Logo"></a>
+                        <a class="logo" href="#" title="logo"><img src="../assets/images/Dana-menu-logo.png" alt="Logo"></a>
                         <p class="italic">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p>
                         <div class="infomation">
                             <p><i class="zmdi zmdi-pin"></i>PO Box CT16122 Collins Street West, Victoria 8007, Australia.</p>
@@ -284,8 +274,21 @@
         <script type="text/javascript" src="../../assets/js/jquery-1.11.1.min.js"></script>
         <script type="text/javascript" src="../../assets/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="../../assets/js/owl.carousel.min.js"></script>
-        
+        <script type="text/javascript" src="../../assets/js/price-range.js"></script>
+        <script type="text/javascript" src="../../assets/js/wow.min.js"></script>
+        <script type="text/javascript">
+          jQuery("#Slider1").slider({ 
+            from: 0,
+            to: 1000,
+            step: 100,
+            smooth: true,
+            round: 0,
+            skin: "plastic"
+            });
+        </script>
         <script type="text/javascript" src="../../assets/js/store.js"></script>
     </body>
+</html>
+
 
 {% endblock %}

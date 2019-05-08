@@ -6290,7 +6290,7 @@ nav.pagination {
 }
 
 #topbar .topbar-right a.register, #topbar .topbar-right a.sign-in {
-  margin: 0px;
+  margin: 10px !important;
 }
 
 #topbar .topbar-right a .zmdi-chevron-down {
@@ -7433,10 +7433,12 @@ nav.pagination {
 #topbar.topbar-v2 .topbar-right .sign-in {
   border-left: none;
   border-color: #eeeeee;
+  padding-left: 10px;
 }
 
 #topbar.topbar-v2 .topbar-right .sign-in a {
   color: #555555;
+  padding-left: 10px;
 }
 
 #topbar.topbar-v2 .topbar-right .sign-in span {
@@ -7598,7 +7600,7 @@ nav.pagination {
   #topbar .topbar-right .sign-in {
     height: 40px;
     line-height: 40px;
-    padding: 0 10px;
+    padding: 10px 10px;
   }
   #header .header-top {
     padding: 20px 0px;

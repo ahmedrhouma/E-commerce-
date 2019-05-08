@@ -5,9 +5,9 @@ namespace App\Controller;
 use App\Entity\Article;
 use App\Entity\Commande;
 use App\Entity\Panier;
+use App\Entity\Categorie;
 use App\Form\ArticleType;
 use App\Form\CommandeType;
-use App\Repository\ArticleRepository;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,6 +16,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Security\Core\Security;
 use App\Repository\PanierRepository;
+use App\Repository\CategorieRepository;
+use App\Repository\ArticleRepository;
 
 
 /**
@@ -24,18 +26,51 @@ use App\Repository\PanierRepository;
 class ArticleController extends AbstractController
 {
     /**
-     * @Route("/article", name="article_index", methods={"GET"})
+     * @Route("/article", name="article_index", methods={"GET","POST"})
      */
-    public function index(ArticleRepository $articleRepository,Request $request,PanierRepository $panierRepository,Security $security): Response
+    public function index(ArticleRepository $articleRepository,Request $request,PanierRepository $panierRepository,CategorieRepository $CategorieRepository,Security $security): Response
     {
-        
+        $em = $this->getDoctrine()->getManager();
+     $repo = $em->getRepository(Article::class);
+     $articles = $repo->findAll();
+      if (isset($_POST['search']))
+       {
+        $articles = $repo->recherche($_POST['s']);
+       }else $articles =$articleRepository->findAll();
+          
         $user = $security->getUser();
          $nbpanier=count($panierRepository->findBy(['User' => $user ]));
         return $this->render('article/index.html.twig', [
-            'articles' => $articleRepository->findAll(),
+            'articles' => $articles,
+            'categories' => $CategorieRepository->findAll(),
             'paniers' => $panierRepository->findBy(['User' => $user ]),'nbpanier' => $nbpanier
         ]);
     }
+
+
+
+
+
+     /**
+     * @Route("/article/{id}", name="catfiltre", methods={"GET"})
+     */
+    public function categorie(Categorie $categorie,ArticleRepository $articleRepository,Request $request,PanierRepository $panierRepository,CategorieRepository $CategorieRepository,Security $security): Response
+    {
+
+        $id=$categorie->getId();
+        $user = $security->getUser();
+        $nbpanier=count($panierRepository->findBy(['User' => $user ]));
+
+        return $this->render('article/index_cat.html.twig', [
+            'articles' => $articleRepository->findBy(['categorie' => $id]),
+            'categories' => $CategorieRepository->findAll(),
+            'paniers' => $panierRepository->findBy(['User' => $user ]),'nbpanier' => $nbpanier
+        ]);
+    }
+
+
+
+
 
     /**
      * @Route("/admin/article/new", name="article_new", methods={"GET","POST"})
@@ -82,12 +117,14 @@ class ArticleController extends AbstractController
     }
 
     /**
-     * @Route("/article/{id}", name="article_show", methods={"GET","POST"})
+     * @Route("/article/show/{id}", name="article_show", methods={"GET","POST"})
      */
-    public function show(Request $request, Article $article,PanierRepository $panierRepository,Security $security): Response
+    public function show(Article $article,PanierRepository $panierRepository,Security $security,ArticleRepository $articleRepository): Response
     {
         $user = $security->getUser();
+        $id=$article->getCategorie();
          $nbpanier=count($panierRepository->findBy(['User' => $user ]));
+         
         if (isset($_POST['ajout'])) {
             $panier = new Panier();
             $user = $security->getUser();
@@ -100,6 +137,7 @@ class ArticleController extends AbstractController
 
         }
         return $this->render('article/show.html.twig', [
+            'articles' => $articleRepository->findBy(['categorie' => $id]),
             'article' => $article,
             'paniers' => $panierRepository->findBy(['User' => $user ]),'nbpanier' => $nbpanier
         ]);
@@ -154,7 +192,7 @@ class ArticleController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('article_index');
+        return $this->redirectToRoute('dashboard');
     }
      /**
      * @return string
